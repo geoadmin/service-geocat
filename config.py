@@ -63,5 +63,6 @@ URL_WHITE_LIST = [
     "^https://map.georessourcen.ethz.ch/$",
     "^https://oereb.llv.li/$",
     "^http://mapplus/.*",
-    "^http://sparcgis01.ad.net.fr.ch/.*"
+    "^http://sparcgis01.ad.net.fr.ch/.*",
+    "^https://sparcgis01.ad.net.fr.ch/.*"
 ]
