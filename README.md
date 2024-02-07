@@ -1,5 +1,7 @@
 # geocat.ch link checker
-This version use SMTP service w/o credentials (username & password) to send email.
+![Static Badge](https://img.shields.io/badge/Python-3.9%2B-%2334eb77)
+
+The service use SMTP server w/o credentials (username & password) to send email. It is intended to use the SMTP from Bund from a server with granted access to the SMTP.
 
 The link checker fetches all published metadata index (grouped by metadata owner) and check the following URL:
 * Contact website (currently indexed only in the main language)
@@ -8,7 +10,7 @@ The link checker fetches all published metadata index (grouped by metadata owner
 If metadata contains invalid URL, an email is sent to the metadata owner with a list of invalid URL.
 
 ## Installation
-Clone the repo and install dependencies in a python virtual environment
+Clone the repo and install dependencies in a python virtual environment (recommended)
 ```
 git clone https://github.com/geoadmin/service-geocat-link-checker.git
 
@@ -18,6 +20,15 @@ python -m venv .venv
 source .venv/bin/activate
 
 pip install -r requirements.txt
+```
+
+### at swisstopo (using powershell)
+```
+git clone https://github.com/geoadmin/service-geocat-link-checker.git
+
+cd service-geocat-link-checker
+
+& "C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\Scripts\pip3" install --trusted-host github.com --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --proxy=proxy-bvcol.admin.ch:8080 -r requirements.txt
 ```
 
 ## SSL Certificate

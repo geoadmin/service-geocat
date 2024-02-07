@@ -2,7 +2,6 @@ import os
 import sys
 import copy
 from smtplib import SMTP
-import requests
 from dotenv import load_dotenv
 import config
 import geopycat
@@ -67,10 +66,10 @@ for user in users:
         continue
 
     # For Production, send email to group admin and to receiver
-    # receivers = [user["emailAddresses"][0], config.MAIL_SENDER]
+    receivers = [user["emailAddresses"][0], config.MAIL_SENDER]
 
     # For test purpose, send email only to the sender
-    receivers = [config.MAIL_SENDER]
+    # receivers = [config.MAIL_SENDER]
 
     # list of tested URL that are valid
     # We do not test them again
