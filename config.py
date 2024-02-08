@@ -28,10 +28,11 @@ MAIL_SUBJECT = "geocat.ch - Invalid metadata"
 MAIL_BODY_START_TEXT = """
 Hello {{name}},
 
-You are receiving this email because you are owner of invalid metadata in the swiss geodata catalogue geocat.ch.
+You are receiving this email because you are owner of invalid metadata that have been harvested into the swiss geodata catalogue geocat.ch.
 The following metadata were found to be not valid because they don't respect the swiss geographical metadata profile.
 
 To maintain a good quality of the swiss geodata catalog, we ask you to check and correct these metadata so that they comply with the swiss geographical metadata profile.
+If you take no action, the invalid metadata will still be harvested and published on geocat.ch.
 
 To help you achieve this goal :
 
@@ -51,9 +52,10 @@ MAIL_BODY_START_HTML = """
 <html>
   <body>
     <p>Hello {{name}}<br><br>
-        You are receiving this email because you are owner of <b>invalid metadata</b> in the swiss geodata catalogue <a href='https://www.geocat.ch/'>geocat.ch</a>.<br>
+        You are receiving this email because you are owner of <b>invalid metadata</b> that have been harvested into the swiss geodata catalogue <a href='https://www.geocat.ch/'>geocat.ch</a>.<br>
         The following metadata were found to be not valid because <b>they don't respect the swiss geographical metadata profile.</b><br><br>
-        To maintain a good quality of the swiss geodata catalog, <b>we ask you to check and correct these metadata</b> so that they comply with the swiss geographical metadata profile.<br><br>
+        To maintain a good quality of the swiss geodata catalog, <b>we ask you to check and correct these metadata</b> so that they comply with the swiss geographical metadata profile.<br>
+        If you take no action, the invalid metadata will still be harvested and published on geocat.ch.<br><br>
         To help you achieve this goal :
         <ul>
             <li>You can find more information on the swiss geospatial metadata profile and its implementation in XML (iso19139.che) <a href='https://www.geocat.admin.ch/en/documentation/standards.html'>here</a></li>
