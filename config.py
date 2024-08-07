@@ -62,7 +62,8 @@ MAIL_BODY_START_HTML = """
 URL_WHITE_LIST = [
     "^https://map.georessourcen.ethz.ch/$",
     "^https://oereb.llv.li/$",
-    "^http://mapplus/.*",
+    "^https://mapplus01/mapplus/fribourg/.*",
+    "^http://mapplus/mapplus/.*",
     "^http://sparcgis01.ad.net.fr.ch/.*",
     "^https://sparcgis01.ad.net.fr.ch/.*"
 ]
