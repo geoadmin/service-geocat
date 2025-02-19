@@ -11,11 +11,23 @@ logger = logging.getLogger(__name__)
 
 def __url_checker(url: str, allow_redirects: bool = True) -> bool:
     """Check if URL is valid"""
+    
+    if not url or not url.strip():
+        logger.error("Invalid URL: Empty or whitespace-only URL detected.")
+        return False
+
+    if ' ' in url:
+        logger.error("Invalid URL: URL contains spaces: %s", url)
+        return False
+
+    if url.startswith('local://'):
+        logger.info(f"Ignoring local URL: {url}")
+        return True
 
     headers = {
         "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.76"
-        }
+    }
 
     RETRY = 5
 
@@ -35,47 +47,39 @@ def __url_checker(url: str, allow_redirects: bool = True) -> bool:
     for url_in_white_list in config.URL_WHITE_LIST:
         if re.search(url_in_white_list, url):
             return True
+    
+    logger.info(f"Checking URL: {url}")
 
     for i in range(RETRY):
-
         try:
-            with requests.get(url=url, allow_redirects=allow_redirects,
-                                timeout=30, headers=headers, stream=True) as response:
-
+            with requests.get(url=url, allow_redirects=allow_redirects, timeout=30, headers=headers, stream=True) as response:
                 response.raise_for_status()
 
         except requests.exceptions.HTTPError as exc:
-
             code = exc.response.status_code
-
             if code in RETRY_CODE:
-                logger.warning("checking URL (try %s) : %s - %s", i+1, url, repr(exc))
-                # retry after n seconds
-                time.sleep((i+1)**2)
+                logger.warning("Retrying URL (try %s): %s - %s", i + 1, url, repr(exc))
+                time.sleep((i + 1) ** 2)
                 continue
-
             elif code in PASS_CODE:
                 return True
-
             else:
-                logger.error("Invalid URL : %s - %s", url, repr(exc))
+                logger.error("Invalid URL: %s - %s", url, repr(exc))
                 return False
 
         except requests.exceptions.ConnectionError as exc:
-
-            logger.warning("checking URL (try %s) : %s - %s", i+1, url, repr(exc))
-            time.sleep(i**2 + 1)
+            logger.warning("Checking URL (try %s): %s - %s", i + 1, url, repr(exc))
+            time.sleep(i ** 2 + 1)
             continue
 
         except requests.exceptions.RequestException as exc:
-
-            logger.error("Invalid URL : %s - %s", url, repr(exc))
+            logger.error("Invalid URL: %s - %s", url, repr(exc))
             return False
 
         else:
             return True
 
-    logger.error("Invalid URL : %s", url)
+    logger.error("Invalid URL: %s", url)
     return False
 
 
@@ -84,93 +88,81 @@ def check_metadata_url(index: dict, valid_url: list) -> dict:
 
     result = {
         "uuid": index["_source"]["uuid"], 
-        "title": index["_source"]["resourceTitleObject"]["default"], 
+        "title": index["_source"].get("resourceTitleObject", {}).get("default", "No title"), 
         "errors": list()        
     }
 
     new_valid_url = []
 
-    # Other constraints Link    
-    # if "MD_LegalConstraintsOtherConstraintsObject" in index["_source"]:
-    #     for i in index["_source"]["MD_LegalConstraintsOtherConstraintsObject"]:
-    #         if "link" in i:
-    #             if i["link"] not in valid_url:
-    #                 if not __url_checker(i["link"]):
-    #                     result["errors"].append(
-    #                         {
-    #                             "url": i["link"],
-    #                             "location": "Other Constraints"
-    #                         }
-    #                     )
-    #                 else:
-    #                     new_valid_url.append(i["link"])
-    #                     valid_url.append(i["link"])
-
-    # Website for contacts (only default lang)
-    for contact in ["contact", "contactForResource", "contactForDistribution"]:
-
-        if contact in index["_source"]:
-            for i in index["_source"][contact]:
-                if "website" in i:
-                    if i["website"] not in valid_url:
-                        if i["website"] != "":
-                            if not __url_checker(i["website"]):
+    try:
+        # 1. Website for contacts (multilingual)
+        for contact in ["contact", "contactForResource", "contactForDistribution"]:
+            if contact in index["_source"]:
+                for i in index["_source"][contact]:
+                    if "websiteObject" in i:
+                        for lang, website in i["websiteObject"].items():
+                            if website not in valid_url and not __url_checker(website):
                                 result["errors"].append(
                                     {
-                                        "url": i["website"],
-                                        "location": f"Website of {contact}"
+                                        "url": website,
+                                        "location": f"Website of {contact} in language {lang}"
                                     }
                                 )
-
-                                if not i["website"].lower().startswith("http"):
-                                    result["errors"][-1]["location"] += " (URL schema e.g. https or http is perhaps missing)"
-
                             else:
-                                new_valid_url.append(i["website"])
-                                valid_url.append(i["website"])
+                                new_valid_url.append(website)
+                                valid_url.append(website)
 
-    # Resources Link (multilingual)
-    if "link" in index["_source"]:
-        for i in index["_source"]["link"]:
-            if i["protocol"].startswith(("OGC:WMS", "OGC:WMTS", "OGC:WFS")):
+        # 2. Resources Link (multilingual)
+        if "link" in index["_source"]:
+            for i in index["_source"]["link"]:
                 for lang, url in i["urlObject"].items():
-                    if url not in valid_url:
-                        if not __url_checker(url, allow_redirects=False):
+                    if url not in valid_url and not __url_checker(url, allow_redirects=i["protocol"].startswith(("OGC:WMS", "OGC:WMTS", "OGC:WFS"))):
+                        result["errors"].append(
+                            {
+                                "url": url,
+                                "location": f"Online resource URL in language {lang} with {i['protocol']} protocol"
+                            }
+                        )
+                    else:
+                        new_valid_url.append(url)
+                        valid_url.append(url)
 
-                            result["errors"].append(
-                                {
-                                    "url": url,
-                                    "location": f"Online resource URL in language {lang} with {i['protocol']} protocol (redirect not allowed for geoservices)"
-                                }
-                            )
+        # 3. Verify links in abstract (multilingual)
+        if "resourceAbstractObject" in index["_source"]:
+            abstract_data = index["_source"]["resourceAbstractObject"]
 
-                            if not url.lower().startswith("http"):
-                                result["errors"][-1]["location"] += " (URL schema e.g. https or http is perhaps missing)"
+            for lang_key, abstract_text in abstract_data.items():
+                urls_in_abstract = re.findall(r'http[s]?://\S+', abstract_text)
+                for url in urls_in_abstract:
+                    if url not in valid_url and not __url_checker(url):
+                        result["errors"].append(
+                            {
+                                "url": url,
+                                "location": f"URL in Abstract (locale: {lang_key})"
+                            }
+                        )
+                    else:
+                        new_valid_url.append(url)
+                        valid_url.append(url)
 
-                        else:
-                            new_valid_url.append(url)
-                            valid_url.append(url)
-            else:
-                for lang, url in i["urlObject"].items():
-                    if url not in valid_url:
-                        if not __url_checker(url):
+    except KeyError as e:
+        missing_key = str(e)
+        result["errors"].append(
+            {
+                "error": f"Missing key: {missing_key}",
+                "location": "Metadata index structure"
+            }
+        )
+        logger.error(f"UUID {index['_source']['uuid']}: Missing key {missing_key}")
 
-                            if i['protocol'] == "":
-                                i['protocol'] = "missing"
-
-                            result["errors"].append(
-                                {
-                                    "url": url,
-                                    "location": f"Online resource URL in language {lang} with {i['protocol']} protocol"
-                                }
-                            )
-
-                            if not url.lower().startswith("http"):
-                                result["errors"][-1]["location"] += " (URL schema e.g. https or http is perhaps missing)"
-
-                        else:
-                            new_valid_url.append(url)
-                            valid_url.append(url)
+    except Exception as e:
+        result["errors"].append(
+            {
+                "error": str(e),
+                "location": "Unexpected error during metadata processing"
+            }
+        )
+        logger.error(f"Unexpected error for UUID {index['_source']['uuid']}: {e}")
 
     return result, new_valid_url
 
@@ -188,27 +180,19 @@ def get_message(report: list, receiver: str, user_name: str) -> object:
     body_html = config.MAIL_BODY_START_HTML.replace("{{name}}", user_name)
 
     for metadata in [i for i in report if len(i["errors"]) > 0]:
-
         body_text += f"Dataset: {config.URL_METADATA}{metadata['uuid']}\n\n"
         body_html += f"Dataset: <a href='{config.URL_METADATA}{metadata['uuid']}'>{metadata['title']}</a><br><br>"
 
         for error in metadata["errors"]:
-
-            body_text += f"Invalid URL: {error['url']}\n"
-            body_text += f"Location: {error['location']}\n\n"
-
-            body_html += f"Invalid URL: <a href='{error['url']}'>{error['url']}</a><br>"
-            body_html += f"Location: {error['location']}<br><br>"            
+            body_text += f"Invalid URL: {error['url']}\nLocation: {error['location']}\n\n"
+            body_html += f"Invalid URL: <a href='{error['url']}'>{error['url']}</a><br>Location: {error['location']}<br><br>"
 
         body_text += "-----\n\n"
         body_html += "-----<br><br>"
 
     body_html += "</p></body></html>"
 
-    part1 = MIMEText(body_text, "plain")
-    part2 = MIMEText(body_html, "html")
-
-    message.attach(part1)
-    message.attach(part2)
+    message.attach(MIMEText(body_text, "plain"))
+    message.attach(MIMEText(body_html, "html"))
 
     return message

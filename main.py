@@ -28,13 +28,21 @@ logger = logging.getLogger(__name__)
 geocat = geopycat.geocat(env="prod")
 
 # Set proxies in environment variables
-os.environ["HTTP_PROXY"] = geocat.session.proxies["http"]
-os.environ["HTTPS_PROXY"] = geocat.session.proxies["https"]
+# os.environ["HTTP_PROXY"] = geocat.session.proxies.get["http"]
+# os.environ["HTTPS_PROXY"] = geocat.session.proxies.get["https"]
+http_proxy = geocat.session.proxies.get("http")
+https_proxy = geocat.session.proxies.get("https")
+
+if http_proxy:
+    os.environ["HTTP_PROXY"] = http_proxy
+if https_proxy:
+    os.environ["HTTPS_PROXY"] = https_proxy
+
 
 try:
     users = geocat.get_users(owner_only=True)
-except:
-    logger.error("Cannot retrieve users information")
+except Exception as e:
+    logger.error("Cannot retrieve users information: %s", str(e))
     sys.exit()
 
 user_count = 0
@@ -48,21 +56,21 @@ for user in users:
                 user["surname"])
 
     query = geopycat.utils.get_search_query(published_only=True,
-                        q=f"owner:{user['id']}")
+                                            q=f"owner:{user['id']}")
 
     body = copy.deepcopy(config.SEARCH_API_BODY)
     body["query"] = query
 
     try:
         indexes = geocat.es_deep_search(body=body)
-    except:
-        logger.error("User [%s/%s] ID: %s - unable to retreieve metadata index",
-                user_count, len(users), user["id"])
+    except Exception as e:
+        logger.error("User [%s/%s] ID: %s - unable to retrieve metadata index: %s",
+                     user_count, len(users), user["id"], str(e))
         continue
 
     if len(indexes) == 0:
         logger.warning("User [%s/%s] ID: %s - no published metadata",
-                user_count, len(users), user["id"]) 
+                       user_count, len(users), user["id"]) 
         continue
 
     # For Production, send email to group admin and to receiver
