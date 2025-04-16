@@ -1,7 +1,6 @@
 import logging
 import os
 import config
-import time
 from xml.etree.ElementTree import Element, SubElement, tostring, fromstring
 
 logger = logging.getLogger(__name__)
