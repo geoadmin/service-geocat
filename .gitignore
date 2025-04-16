@@ -12,6 +12,9 @@ pip-delete-this-directory.txt
 *.jpg
 *.jfif
 
+# Provider files
+*.json
+
 # Unit test / coverage reports 
 htmlcov/ 
 .tox/ 
