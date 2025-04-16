@@ -1,0 +1,888 @@
+2025-04-03 12:26 __main__     INFO     Start of the group synchronisation script
+2025-04-03 12:26 logo_sync    INFO     Fetching the list of available logos from geocat
+2025-04-03 12:26 logo_sync    INFO     253 logos retrieved from geocat
+2025-04-03 12:26 logo_sync    INFO     Fetching provider information from Viageo
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1916.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1916.png' vers 'logos\viageo\1916.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1916.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1751.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1751.png' vers 'logos\viageo\1751.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1751.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1761.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1761.png' vers 'logos\viageo\1761.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1761.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '3116.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/3116.png' vers 'logos\viageo\3116.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '3116.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1753.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1753.png' vers 'logos\viageo\1753.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1753.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '639995410a79e228694923.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/639995410a79e228694923.png' vers 'logos\viageo\639995410a79e228694923.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '639995410a79e228694923.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1979.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1979.png' vers 'logos\viageo\1979.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1979.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '856.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/856.png' vers 'logos\viageo\856.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '856.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1910.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1910.png' vers 'logos\viageo\1910.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1910.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '861.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/861.png' vers 'logos\viageo\861.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '861.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '673c4e1fa263c923817528.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/673c4e1fa263c923817528.png' vers 'logos\viageo\673c4e1fa263c923817528.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '673c4e1fa263c923817528.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '61d4487242193714125455.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/61d4487242193714125455.png' vers 'logos\viageo\61d4487242193714125455.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '61d4487242193714125455.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '872.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/872.png' vers 'logos\viageo\872.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '872.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1906.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1906.png' vers 'logos\viageo\1906.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1906.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '6384.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/6384.png' vers 'logos\viageo\6384.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '6384.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1756.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1756.png' vers 'logos\viageo\1756.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1756.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1909.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1909.png' vers 'logos\viageo\1909.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1909.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '63495541849c1220126633.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/63495541849c1220126633.png' vers 'logos\viageo\63495541849c1220126633.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '63495541849c1220126633.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '2003.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/2003.png' vers 'logos\viageo\2003.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '2003.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '880.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/880.png' vers 'logos\viageo\880.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '880.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '64b6ae9a67411320834486.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/64b6ae9a67411320834486.png' vers 'logos\viageo\64b6ae9a67411320834486.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '64b6ae9a67411320834486.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '897.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/897.png' vers 'logos\viageo\897.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '897.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '891.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/891.png' vers 'logos\viageo\891.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '891.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '65bb6c3981add634731529.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/65bb6c3981add634731529.png' vers 'logos\viageo\65bb6c3981add634731529.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '65bb6c3981add634731529.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '2124.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/2124.png' vers 'logos\viageo\2124.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '2124.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '909.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/909.png' vers 'logos\viageo\909.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '909.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '784.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/784.png' vers 'logos\viageo\784.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '784.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '911.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/911.png' vers 'logos\viageo\911.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '911.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '923.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/923.png' vers 'logos\viageo\923.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '923.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '917.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/917.png' vers 'logos\viageo\917.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '917.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '2773.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/2773.png' vers 'logos\viageo\2773.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '2773.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '550.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/550.png' vers 'logos\viageo\550.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '550.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1767.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1767.png' vers 'logos\viageo\1767.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1767.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '61e6dd1363f06843407980.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/61e6dd1363f06843407980.png' vers 'logos\viageo\61e6dd1363f06843407980.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '61e6dd1363f06843407980.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '2447.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/2447.png' vers 'logos\viageo\2447.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '2447.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '937.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/937.png' vers 'logos\viageo\937.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '937.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1986.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1986.png' vers 'logos\viageo\1986.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1986.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1757.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1757.png' vers 'logos\viageo\1757.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1757.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '633ef02be493b275269922.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/633ef02be493b275269922.png' vers 'logos\viageo\633ef02be493b275269922.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '633ef02be493b275269922.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '943.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/943.png' vers 'logos\viageo\943.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '943.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '611a1a5ec61be791227594.jpg' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/611a1a5ec61be791227594.jpg' vers 'logos\viageo\611a1a5ec61be791227594.jpg'
+2025-04-03 12:26 logo_sync    INFO     Logo '611a1a5ec61be791227594.jpg' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '2184.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/2184.png' vers 'logos\viageo\2184.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '2184.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '66aa39dca10e3673511453.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/66aa39dca10e3673511453.png' vers 'logos\viageo\66aa39dca10e3673511453.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '66aa39dca10e3673511453.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '61dd678d249c1944176369.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/61dd678d249c1944176369.png' vers 'logos\viageo\61dd678d249c1944176369.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '61dd678d249c1944176369.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1945.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1945.png' vers 'logos\viageo\1945.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1945.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '956.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/956.png' vers 'logos\viageo\956.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '956.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '6231b8c7db356720820358.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/6231b8c7db356720820358.png' vers 'logos\viageo\6231b8c7db356720820358.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '6231b8c7db356720820358.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '174.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/174.png' vers 'logos\viageo\174.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '174.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1998.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1998.png' vers 'logos\viageo\1998.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1998.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1768.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1768.png' vers 'logos\viageo\1768.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1768.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '6316ecce16e0c026694900.jpg' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/6316ecce16e0c026694900.jpg' vers 'logos\viageo\6316ecce16e0c026694900.jpg'
+2025-04-03 12:26 logo_sync    INFO     Logo '6316ecce16e0c026694900.jpg' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '959.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/959.png' vers 'logos\viageo\959.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '959.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '65562684a4f10009497860.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/65562684a4f10009497860.png' vers 'logos\viageo\65562684a4f10009497860.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '65562684a4f10009497860.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1912.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1912.png' vers 'logos\viageo\1912.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1912.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '969.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/969.png' vers 'logos\viageo\969.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '969.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '970.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/970.png' vers 'logos\viageo\970.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '970.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '6556244d8d244947585170.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/6556244d8d244947585170.png' vers 'logos\viageo\6556244d8d244947585170.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '6556244d8d244947585170.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '641ae3b2803a0083289132.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/641ae3b2803a0083289132.png' vers 'logos\viageo\641ae3b2803a0083289132.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '641ae3b2803a0083289132.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1985.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1985.png' vers 'logos\viageo\1985.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1985.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1765.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1765.png' vers 'logos\viageo\1765.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1765.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '6630a6c09aa30231705364.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/6630a6c09aa30231705364.png' vers 'logos\viageo\6630a6c09aa30231705364.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '6630a6c09aa30231705364.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '7319.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/7319.png' vers 'logos\viageo\7319.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '7319.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '637b54fc7c26d137999912.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/637b54fc7c26d137999912.png' vers 'logos\viageo\637b54fc7c26d137999912.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '637b54fc7c26d137999912.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1766.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1766.png' vers 'logos\viageo\1766.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1766.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '2123.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/2123.png' vers 'logos\viageo\2123.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '2123.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '3381.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/3381.png' vers 'logos\viageo\3381.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '3381.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1013.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1013.png' vers 'logos\viageo\1013.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1013.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '2444.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/2444.png' vers 'logos\viageo\2444.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '2444.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1750.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1750.png' vers 'logos\viageo\1750.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1750.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '721.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/721.png' vers 'logos\viageo\721.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '721.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1752.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1752.png' vers 'logos\viageo\1752.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1752.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '63032f4f79c65501369976.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/63032f4f79c65501369976.png' vers 'logos\viageo\63032f4f79c65501369976.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '63032f4f79c65501369976.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1028.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1028.png' vers 'logos\viageo\1028.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1028.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '60c8d59ca87bd861468924.jpg' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/60c8d59ca87bd861468924.jpg' vers 'logos\viageo\60c8d59ca87bd861468924.jpg'
+2025-04-03 12:26 logo_sync    INFO     Logo '60c8d59ca87bd861468924.jpg' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '617815cd2789a143306513.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/617815cd2789a143306513.png' vers 'logos\viageo\617815cd2789a143306513.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '617815cd2789a143306513.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '64be22b3b04c8843903451.jpg' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/64be22b3b04c8843903451.jpg' vers 'logos\viageo\64be22b3b04c8843903451.jpg'
+2025-04-03 12:26 logo_sync    INFO     Logo '64be22b3b04c8843903451.jpg' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '9676.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/9676.png' vers 'logos\viageo\9676.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '9676.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1978.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1978.png' vers 'logos\viageo\1978.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1978.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '6540baf7af2d6176207111.jfif' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/6540baf7af2d6176207111.jfif' vers 'logos\viageo\6540baf7af2d6176207111.jfif'
+2025-04-03 12:26 logo_sync    INFO     Logo '6540baf7af2d6176207111.jfif' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '6294a1f0955a0814691860.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/6294a1f0955a0814691860.png' vers 'logos\viageo\6294a1f0955a0814691860.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '6294a1f0955a0814691860.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1913.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1913.png' vers 'logos\viageo\1913.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1913.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1292.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1292.png' vers 'logos\viageo\1292.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1292.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '9701.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/9701.png' vers 'logos\viageo\9701.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '9701.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '2443.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/2443.png' vers 'logos\viageo\2443.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '2443.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '66f412fc4d110106473718.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/66f412fc4d110106473718.png' vers 'logos\viageo\66f412fc4d110106473718.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '66f412fc4d110106473718.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '65bbccd93299e483413467.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/65bbccd93299e483413467.png' vers 'logos\viageo\65bbccd93299e483413467.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '65bbccd93299e483413467.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1760.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1760.png' vers 'logos\viageo\1760.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1760.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '3031.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/3031.png' vers 'logos\viageo\3031.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '3031.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '3416.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/3416.png' vers 'logos\viageo\3416.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '3416.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '64b6ae34ce972067360092.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/64b6ae34ce972067360092.png' vers 'logos\viageo\64b6ae34ce972067360092.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '64b6ae34ce972067360092.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '659ea4843d7d6893001905.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/659ea4843d7d6893001905.png' vers 'logos\viageo\659ea4843d7d6893001905.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '659ea4843d7d6893001905.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '65c5d939b845b932935371.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/65c5d939b845b932935371.png' vers 'logos\viageo\65c5d939b845b932935371.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '65c5d939b845b932935371.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '67232feac64b0516328554.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/67232feac64b0516328554.png' vers 'logos\viageo\67232feac64b0516328554.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '67232feac64b0516328554.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1054.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1054.png' vers 'logos\viageo\1054.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1054.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '6283b941c1e5e075617278.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/6283b941c1e5e075617278.png' vers 'logos\viageo\6283b941c1e5e075617278.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '6283b941c1e5e075617278.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1541.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1541.png' vers 'logos\viageo\1541.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1541.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1056.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1056.png' vers 'logos\viageo\1056.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1056.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '67dad15a088ea694077095.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/67dad15a088ea694077095.png' vers 'logos\viageo\67dad15a088ea694077095.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '67dad15a088ea694077095.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '65a65287afd23721151053.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/65a65287afd23721151053.png' vers 'logos\viageo\65a65287afd23721151053.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '65a65287afd23721151053.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '62f4daa036143588983663.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/62f4daa036143588983663.png' vers 'logos\viageo\62f4daa036143588983663.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '62f4daa036143588983663.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1057.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1057.png' vers 'logos\viageo\1057.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1057.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '832.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/832.png' vers 'logos\viageo\832.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '832.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1058.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1058.png' vers 'logos\viageo\1058.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1058.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1062.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1062.png' vers 'logos\viageo\1062.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1062.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1955.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1955.png' vers 'logos\viageo\1955.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1955.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '633c46a04ffd9540766924.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/633c46a04ffd9540766924.png' vers 'logos\viageo\633c46a04ffd9540766924.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '633c46a04ffd9540766924.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1997.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1997.png' vers 'logos\viageo\1997.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1997.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '10576.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/10576.png' vers 'logos\viageo\10576.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '10576.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Téléchargement du logo '1749.png' depuis 'https://viageo.ch/media/cache/provider_logo/uploads/organization_logo/1749.png' vers 'logos\viageo\1749.png'
+2025-04-03 12:26 logo_sync    INFO     Logo '1749.png' already exists locally. Download skipped.
+2025-04-03 12:26 logo_sync    INFO     Starting logo uploads to geocat
+2025-04-03 12:26 logo_sync    INFO     Logo 'CERN.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'CHA.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'DCS.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'DEE.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'default_logo.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'DF.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'DIN.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'DIP.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'DSM.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'DT.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'FP.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'FTI.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'GVA.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'HES_SO.jpg' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'HES_SO.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'IMAD.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'SIG.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'TPG.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'VDG.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1013.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1028.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1054.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1056.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1057.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '10576.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1058.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1062.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1292.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1541.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '174.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1749.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1750.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1751.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1752.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1753.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1756.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1757.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1760.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1761.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1765.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1766.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1767.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1768.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1906.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1909.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1910.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1912.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1913.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1916.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1945.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1955.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1978.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1979.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1985.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1986.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1997.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '1998.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '2003.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '2123.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '2124.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '2184.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '2443.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '2444.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '2447.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '2773.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '3031.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '3116.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '3381.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '3416.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '550.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '60c8d59ca87bd861468924.jpg' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '611a1a5ec61be791227594.jpg' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '617815cd2789a143306513.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '61d4487242193714125455.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '61dd678d249c1944176369.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '61e6dd1363f06843407980.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '6231b8c7db356720820358.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '6283b941c1e5e075617278.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '6294a1f0955a0814691860.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '62f4daa036143588983663.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '63032f4f79c65501369976.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '6316ecce16e0c026694900.jpg' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '633c46a04ffd9540766924.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '633ef02be493b275269922.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '63495541849c1220126633.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '637b54fc7c26d137999912.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '6384.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '639995410a79e228694923.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '641ae3b2803a0083289132.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '64b6ae34ce972067360092.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '64b6ae9a67411320834486.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '64be22b3b04c8843903451.jpg' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Uploading logo '6540baf7af2d6176207111.jfif' to geocat from path 'logos\viageo\6540baf7af2d6176207111.jfif'
+2025-04-03 12:26 logo_sync    ERROR    Error uploading logo '6540baf7af2d6176207111.jfif' to geocat: 400 Client Error: Bad Request for url: https://geocat-int.dev.bgdi.ch/geonetwork/srv/api/logos?overwrite=true
+2025-04-03 12:26 logo_sync    INFO     Logo '6556244d8d244947585170.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '65562684a4f10009497860.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '659ea4843d7d6893001905.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '65a65287afd23721151053.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '65bb6c3981add634731529.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '65bbccd93299e483413467.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '65c5d939b845b932935371.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '6630a6c09aa30231705364.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '66aa39dca10e3673511453.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '66f412fc4d110106473718.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '67232feac64b0516328554.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '673c4e1fa263c923817528.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '67dad15a088ea694077095.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '721.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '7319.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '784.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '832.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '856.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '861.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '872.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '880.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '891.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '897.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '909.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '911.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '917.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '923.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '937.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '943.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '956.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '959.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '9676.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '969.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '970.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo '9701.png' already exists in geocat. Upload skipped.
+2025-04-03 12:26 logo_sync    INFO     Logo 'default_logo.png' already exists in geocat. Upload skipped.
+2025-04-03 12:27 __main__     INFO     User ID for 'viageo.ch': 40514941
+2025-04-03 12:27 __main__     INFO     User 'viageo.ch' found with ID 40514941
+2025-04-03 12:27 __main__     INFO     User ID for 'Admin_SITG': 47224571
+2025-04-03 12:27 __main__     INFO     User 'Admin_SITG' found with ID 47224571
+2025-04-03 12:27 providers    INFO     Fetching providers from Viageo
+2025-04-03 12:27 providers    INFO     109 providers retrieved from Viageo
+2025-04-03 12:27 providers    INFO     Fetching providers from SITG (S3 bucket)
+2025-04-03 12:27 paramiko.transport INFO     Connected (version 2.0, client AWS_SFTP_1.1)
+2025-04-03 12:27 paramiko.transport INFO     Authentication (publickey) successful!
+2025-04-03 12:27 paramiko.transport.sftp INFO     [chan 0] Opened sftp connection (server version 3)
+2025-04-03 12:27 sftp_handler INFO     SFTP connection successful at upload-admin.geocat.ch
+2025-04-03 12:27 sftp_handler INFO     Répertoire distant à vérifier : '/ge-geocat-ch/int'
+2025-04-03 12:27 sftp_handler INFO     Liste des fichiers dans le répertoire '/ge-geocat-ch/int': ['organisations.json', 'byorg', 'legacy']
+2025-04-03 12:27 sftp_handler INFO     Nom de fichier attendu : 'organisations.json'
+2025-04-03 12:27 sftp_handler INFO     Téléchargement réussi : /ge-geocat-ch/int/organisations.json -> ./providers/organisations_sitg.json
+2025-04-03 12:27 paramiko.transport.sftp INFO     [chan 0] sftp session closed.
+2025-04-03 12:27 sftp_handler INFO     SFTP connection closed
+2025-04-03 12:27 providers    INFO     17 providers retrieved from SITG
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Starting group synchronization process
+2025-04-03 12:27 group_sync   INFO     Group 'le-chenit' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'thermoreso' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'payerne' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'la-tour-de-peilz' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'sdis-ouest-lavaux' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'ballaigues' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'cjl' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'holdigaz' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'sogebois' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'haute-ecole-specialisee-de-suisse-occidentale' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'valregieaux' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'viteos' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'pully' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'vevey' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'sie' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'tl' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'cadouest' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'eca-vaud' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'tolochenaz' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'aistbv' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'bullet' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'bex' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'romande-energie' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'yverdon-les-bains' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'departement-de-linstruction-publique-de-la-formation-et-de-la-jeunesse' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'departement-des-institutions-et-du-numerique' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'bussigny' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'fondation-des-parkings' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'juriens' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'vo-energies' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'mathod' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'saint-prex' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'departement-de-leconomie-et-de-lemploi' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'lignerolle' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'sefa' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'cossonay' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'lully' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'moudon' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'pomy' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'mont-la-ville' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'valeyres-sous-montagny' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'cff' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'aigle' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'bercher' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'aubonne' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'romanel-sur-lausanne' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'fondation-pour-les-terrains-industriels-de-geneve' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'departement-de-la-cohesion-sociale' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'morges' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'tevenon' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'transports-public-genevois' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'administration-cantonale-vaudoise' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'swisscom-suisse' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'police-est-lausannois' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'valeyres-sous-ursins' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'geneve-aeroport' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'l-abbaye' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'belmont-sur-lausanne' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'departement-du-territoire' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'cgc-energie' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'seic' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'asit' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'departement-des-finances-des-ressources-humaines-et-des-affaires-exterieures' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'ursins' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'chauffage-a-distance-begnins' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'demoret' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'uzufly' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'cuarny' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'villeneuve' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'groupe-e' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'chamblon' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'groupe-e-celsius' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'nestle-waters-suisse' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'sitse' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'nyon' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'gilly' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'thermoreseau-burtigny' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'cartoriviera' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'chevilly' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'ecublens' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'departement-de-la-sante-et-des-mobilites' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'rolle' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'vaulion' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'lausanne' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'echallens' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'monthey' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'moiry' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'satom' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'chene-paquier' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'ville-de-geneve' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'bti' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'blonay-saint-legier' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'services-industriels-de-geneve' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'montreux' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'erm' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'noville' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'treycovagnes' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'sige' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'ferreyres' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'la-sarraz' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'fiez' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'gaznat' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'sagenord' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'fma-sa' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'prilly' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'genedis' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'valeyres-sous-rances' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'geo-solutions-ingenieurs' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'mauborget' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'trn' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'cuarnens' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'donneloye' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'sparrow-analytics' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'echandens' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'aggloy' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'thermoreso-nyon' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'upc' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'tvt-services' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'hautemorges' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'region-morges' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'organisation-europeenne-pour-la-recherche-nucleaire' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'lutry' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'rovray' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'cronay' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'institution-genevoise-de-maintien-a-domicile' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Group 'chancellerie-detat' already exists.
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 group_sync   INFO     Fetching groups from geocat
+2025-04-03 12:27 group_sync   INFO     210 groups retrieved from geocat
+2025-04-03 12:27 __main__     INFO     Start of harvest management for the user 'viageo.ch'
+2025-04-03 12:27 harvester_sync INFO     Retrieving harvesters from geocat
+2025-04-03 12:27 harvester_sync INFO     151 harvesters retrieved
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'le-chenit' (ID: f88f0716-78c8-475c-a582-77dbbefd63fa)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'thermoreso' (ID: fa48086e-b041-4c9a-9f11-60b0d1ae38b3)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'holdigaz' (ID: cef039da-ecdf-4192-92eb-6f554198ba01)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'sogebois' (ID: b89584ce-8279-6024-d1af-46fc37546f41)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'valregieaux' (ID: 47576493-02d0-4626-8117-d1520944f59b)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'viteos' (ID: bb602382-1aa9-6ad4-3d91-0a0939d103aa)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'vevey' (ID: a9cd0451-f5f1-4d23-830f-9b5890d19035)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'aistbv' (ID: 8650087f-7be7-46da-a6d3-7266ab92a6f6)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'bullet' (ID: 6dd273c3-2959-4f1b-b7e5-b48bc86be017)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'bex' (ID: 0b2496c1-68a4-4bb6-a6c0-bb9b6771ff84)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'romande-energie' (ID: 4888eacf-cfe5-4706-83e2-9ad3f8514b5a)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'yverdon-les-bains' (ID: fb3deaa7-11fe-4f19-9a02-05c6c74b4088)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'bussigny' (ID: 2cfe003b-e835-48b1-97b2-5a649d1a49c8)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'mathod' (ID: effa35c9-87ba-4970-9459-314b96d0b895)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'cossonay' (ID: b2c7a276-f726-41e4-abbc-b721836b0645)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'lully' (ID: 69b43e0f-729f-4e77-9aaf-b542286b93c6)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'moudon' (ID: d041f4d9-cdc3-40dd-b408-89ced7e10bd6)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'pomy' (ID: c194ce36-bc36-4713-864c-19ae04bc7acf)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'valeyres-sous-montagny' (ID: 46daebcc-7c6a-4ccd-88be-f638644ca96f)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'aubonne' (ID: 9c6fd4c8-a73c-4e17-a9cd-269ec9b72bca)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'romanel-sur-lausanne' (ID: f1edaa96-57bd-4a85-a08c-dd6a4d078a33)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'administration-cantonale-vaudoise' (ID: c00eb4d5-cb91-49aa-9aae-7b3ff57de8d4)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'swisscom-suisse' (ID: 9161e8b0-2c19-49ab-bd3a-bc8ed94e1a0e)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'police-est-lausannois' (ID: 419da0fd-e661-4ff5-a90c-1ac3ea8fa57e)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'valeyres-sous-ursins' (ID: 3b513da8-6c14-4464-8b4d-05c8b7f81740)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'asit' (ID: a35f0327-bceb-43a1-b366-96c3a94bc47b)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'demoret' (ID: 15611fac-09b5-49e8-819f-fbbe7100d491)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'uzufly' (ID: 062cfdb3-d7d5-4f84-9018-6044b40b6d70)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'groupe-e-celsius' (ID: 798583f9-75ac-00f4-f1e1-16f3e04e061b)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'nyon' (ID: bcf3e3d9-212a-4b6c-a8e4-4e0d1f5584cd)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'chevilly' (ID: 2e988db7-6401-4cc8-bfce-6553dd1c2b3f)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'ecublens' (ID: b1335eda-b7d1-400b-a65c-4696a31d2db7)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'rolle' (ID: 33fe58b1-0214-46e1-a014-a8b4427a6314)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'echallens' (ID: 2d3c5cd6-5829-4a87-adcf-5e544f598a20)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'monthey' (ID: bcf5f3a1-45c7-9324-1ded-ade97d6e955f)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'moiry' (ID: 0c860ef1-23c2-4dfe-961c-456e064ce7bb)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'satom' (ID: f90c263e-a003-481c-a506-1935ff582f22)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'bti' (ID: 47b294d1-ed92-41d9-b25b-21ec10fea236)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'blonay-saint-legier' (ID: 42c2648c-69ef-4a13-9421-4f0d8cb8ee26)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'montreux' (ID: ea737281-482e-41cb-aba3-8fb3f679650e)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'erm' (ID: 69b3ff3f-a154-4952-b759-20680fd2592e)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'noville' (ID: 9e18342c-2fb5-44f5-9336-6b40ad17f4fc)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'treycovagnes' (ID: 16306357-2eaf-41b3-a005-def117729abb)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'sige' (ID: f0fc0e64-f687-485d-997d-e428e786124e)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'fma-sa' (ID: e1e61129-cbc3-4c3e-a42c-160525d23476)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'genedis' (ID: 4d7eeb8b-92f7-4a3d-a3ce-972af9b1eee5)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'valeyres-sous-rances' (ID: d4786bf4-bcb4-4eeb-9b50-83702f36a523)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'geo-solutions-ingenieurs' (ID: fe651273-f3a3-4700-8450-2bbf50c1fa56)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'trn' (ID: 442834ef-d0ed-4ff8-978e-903f220aadf7)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'donneloye' (ID: 864252b7-21c5-475b-aa38-3e5ea5b3864f)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'sparrow-analytics' (ID: 40f48509-0cf9-43c0-a1dc-d6ad95b98ca8)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'aggloy' (ID: df8e48bf-6ddb-4f83-a36b-d249eccd3840)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'thermoreso-nyon' (ID: 4a9e6a5a-a45e-479d-b2bf-8100118a24f2)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'region-morges' (ID: 82a1997f-e21d-45ea-96cb-91e73c65154c)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'lutry' (ID: 3b492e99-b85f-43f2-8376-1e9257dc2dc6)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'payerne' (ID: db5c2a93-4027-464a-a359-44ef53eae949)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'sdis-ouest-lavaux' (ID: 8f70f249-2ebc-91c4-1dea-c072eaec81d4)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'la-tour-de-peilz' (ID: 3dedd8c4-804c-41ed-887c-c483a18562f0)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'ballaigues' (ID: 1427964b-eb70-4123-b4f4-2cb6ae77d42a)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'cjl' (ID: 6ca63214-6bba-7e14-795f-b7c87400e167)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'pully' (ID: 45e75f98-a732-475b-80b7-d7b6f446324b)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'sie' (ID: 0cb3aab7-4305-4e55-9968-61fe785700d6)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'tl' (ID: 08971775-6c7b-4e23-8f53-178aab17e572)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'cadouest' (ID: 677b9775-78c0-a814-a17a-6a4f5eeac203)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'eca-vaud' (ID: 664e999e-8983-4f17-9858-56ad18adb686)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'tolochenaz' (ID: e5e08acc-74b0-40fa-8a43-62a0ac879bb8)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'juriens' (ID: 464fb23c-aa58-412a-a657-cf11ca411b8a)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'vo-energies' (ID: bb83c319-4d8d-4a82-9060-0fb60cd8b654)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'saint-prex' (ID: 59114534-992e-4522-b0ce-814d4a41c46b)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'lignerolle' (ID: b50cb6e4-f3c6-4155-a8ff-90784ba22b6e)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'sefa' (ID: 070b08e8-fbc1-426f-bcae-081c27244984)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'mont-la-ville' (ID: 152450bf-dc96-4bd3-8c86-fb407bec65d4)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'cff' (ID: 8c636456-683a-4df5-9bb6-2b0c6319b243)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'aigle' (ID: 77f4053a-4c3c-4c8b-a842-3c9a755496df)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'bercher' (ID: 60f7fefa-c76f-472b-abed-5bd4390c898d)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'morges' (ID: b046d19c-496a-4533-a68d-e5a988aaa499)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'tevenon' (ID: efce7001-1165-48ad-8139-bbee392440be)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'l-abbaye' (ID: bf75fef6-aaf5-4916-ad95-952e9e1d27ab)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'belmont-sur-lausanne' (ID: 77a4a1d6-2d84-4dcd-92ea-8772da617c86)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'cgc-energie' (ID: 591afedb-8f3a-4968-b2c2-b3a89fc460b9)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'seic' (ID: 3488be98-f073-499f-b294-47c99380d729)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'ursins' (ID: 4f8a72af-9624-45f5-a578-9835a78e973a)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'chauffage-a-distance-begnins' (ID: 8f586536-508c-4d0b-a648-9ca9e7906eb4)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'cuarny' (ID: 51618db9-a91f-4f32-bf4b-8ce2dc0a3fac)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'villeneuve' (ID: 2712c017-9bb8-4cc0-83f0-fda593df107d)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'groupe-e' (ID: a2f53755-c8bb-4812-b9a9-a6e12fe3b806)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'chamblon' (ID: 224e33b3-954f-4a3e-8fcd-5b4db12607f4)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'nestle-waters-suisse' (ID: b49e15ab-16a0-9284-9d39-c980ed317e99)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'sitse' (ID: ce68affc-4a47-4f29-ad3b-af9eab1c5002)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'gilly' (ID: 7a0a6eb1-36c6-4a64-b449-295e45195ec8)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'thermoreseau-burtigny' (ID: 0baf9f81-6ce5-4fc1-a680-309fb9a17192)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'cartoriviera' (ID: 0ecf0006-2dc4-406a-a120-19c868142999)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'vaulion' (ID: 4cf6e519-14cc-49e7-979c-2f36f9a5f2a1)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'lausanne' (ID: 65d5a8df-eaae-4d98-b8e7-323f60c68334)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'chene-paquier' (ID: 266d1413-f5c2-42c6-ab98-20450992f110)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'ferreyres' (ID: 6e2ffafa-57d7-4717-9f39-972be4fc9b57)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'la-sarraz' (ID: 024aa875-acbb-4ab0-82ec-d52e36e0cfb0)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'fiez' (ID: 5db9241b-079d-4bfd-8fd2-aacfb7ab89be)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'gaznat' (ID: b99e2a4d-e81f-452e-9dc9-f5ed30b3b85d)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'sagenord' (ID: a946581a-c181-b5f4-ed32-65cc990e81c5)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'prilly' (ID: 01abf8a2-75dc-42bf-9f46-95061a633ad2)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'mauborget' (ID: 5e8718d5-570b-4307-8829-528b2820f566)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'cuarnens' (ID: a1ca5930-2cbb-41ec-bffd-b9e2668bb5b7)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'echandens' (ID: e3f4dd87-0ad6-46b5-81ad-ae80327164be)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'upc' (ID: af349e4b-1cd0-4c8a-9e40-75d55dd45365)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'tvt-services' (ID: 45e49a94-8504-ce64-2556-2fecc52f5d85)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'hautemorges' (ID: a3da076d-bf51-4fc1-a0be-a65a3c704759)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'rovray' (ID: ca9fdc8f-521c-49c1-b558-58385fd00f0f)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'cronay' (ID: f2212a24-96db-4cba-ad91-6471071a7577)
+2025-04-03 12:27 __main__     INFO     Start of harvest management for the user 'Admin_SITG'
+2025-04-03 12:27 harvester_sync INFO     Retrieving harvesters from geocat
+2025-04-03 12:27 harvester_sync INFO     151 harvesters retrieved
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'departement-de-linstruction-publique-de-la-formation-et-de-la-jeunesse' (ID: DIP)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'fondation-des-parkings' (ID: FP)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'fondation-pour-les-terrains-industriels-de-geneve' (ID: FTI)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'departement-de-la-cohesion-sociale' (ID: DCS)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'geneve-aeroport' (ID: GVA)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'departement-des-finances-des-ressources-humaines-et-des-affaires-exterieures' (ID: DF)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'ville-de-geneve' (ID: VDG)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'services-industriels-de-geneve' (ID: SIG)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'institution-genevoise-de-maintien-a-domicile' (ID: IMAD)
+2025-04-03 12:27 harvester_sync INFO     Harvester for group 'haute-ecole-specialisee-de-suisse-occidentale' successfully created with ID 46854592.
+2025-04-03 12:27 harvester_sync INFO     Harvester ID 46854592 successfully activated.
+2025-04-03 12:27 harvester_sync INFO     Harvester ID 46854592 successfully started (run initiated).
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'departement-des-institutions-et-du-numerique' (ID: DIN)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'departement-de-leconomie-et-de-lemploi' (ID: DEE)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'transports-public-genevois' (ID: TPG)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'departement-du-territoire' (ID: DT)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'departement-de-la-sante-et-des-mobilites' (ID: DSM)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'organisation-europeenne-pour-la-recherche-nucleaire' (ID: CERN)
+2025-04-03 12:27 harvester_sync INFO     Harvester already exists for group 'chancellerie-detat' (ID: CHA)
