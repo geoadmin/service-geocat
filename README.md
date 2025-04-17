@@ -1,6 +1,3 @@
-markdown
-Copy
-
 # Geocat Harvester Disaggregation Tool
 
 Python script to synchronize groups, harvesters, and logos between GeoNetwork and external providers (SITG/Viageo).
@@ -59,7 +56,7 @@ python main.py
 
 Project Structure
 Copy
-
+```bash
 .
 ├── main.py               # Main script
 ├── config.py             # Paths and constants
@@ -72,7 +69,7 @@ Copy
     ├── harvester_sync.py # Harvester management
     ├── logo_sync.py      # Logo handling
     └── sftp_handler.py   # SFTP operations
-
+```
 Key Modules
 GroupSynchronizer
 
