@@ -62,13 +62,12 @@ Copy
 ├── config.py             # Paths and constants
 ├── requirements.txt      # Python dependencies
 ├── .env.example          # Environment template
-├── providers/            # Organization data
-│   └── organisations_sitg.json  # Downloaded from SFTP
-└── modules/
-    ├── group_sync.py     # Group synchronization
-    ├── harvester_sync.py # Harvester management
-    ├── logo_sync.py      # Logo handling
-    └── sftp_handler.py   # SFTP operations
+├── providers/            # Organisation structure
+│   └── organisations_provider.json  # Downloaded from SFTP
+├── group_sync.py     # Group synchronization
+├── harvester_sync.py # Harvester management
+├── logo_sync.py      # Logo handling
+└── sftp_handler.py   # SFTP operations
 ```
 Key Modules
 GroupSynchronizer
