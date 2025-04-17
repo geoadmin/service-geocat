@@ -1,21 +1,21 @@
 markdown
 Copy
 
-# GeoCat Harvester Disaggregation Tool
+# Geocat Harvester Disaggregation Tool
 
 Python script to synchronize groups, harvesters, and logos between GeoNetwork and external providers (SITG/Viageo).
 
 ## Features
 
-- **Group Synchronization**: Creates/updates GeoCat groups based on SITG/Viageo organizations
+- **Group Synchronization**: Creates/updates geocat groups based on SITG/Viageo organizations
 - **Harvester Management**: Syncs harvester configurations per organization
-- **Logo Handling**: Downloads logos from Viageo and uploads to GeoCat
+- **Logo Handling**: Downloads logos from Viageo and uploads to geocat
 - **SFTP Integration**: Fetches configuration files from SFTP server
 
 ## Prerequisites
 
 - Python 3.9+
-- GeoNetwork (GeoCat) API access
+- GeoNetwork (geocat) API access
 - SSH key for SFTP (if used)
 - Viageo API access (for logos)
 
@@ -36,7 +36,7 @@ Python script to synchronize groups, harvesters, and logos between GeoNetwork an
     ini
     Copy
 
-    # GeoCat
+    # geocat
     GEOCAT_USER=admin
     GEOCAT_PASSWORD=your_password
     GEOCAT_ENV=prod  # or 'dev'
@@ -76,7 +76,7 @@ Copy
 Key Modules
 GroupSynchronizer
 
-    Syncs GeoCat groups with source organizations
+    Syncs Geocat groups with source organizations
 
     Manages UUID → Group ID mappings
 
@@ -94,7 +94,7 @@ LogoManager
 
     Downloads logos from Viageo
 
-    Uploads to GeoCat with proper filenames
+    Uploads to Geocat with proper filenames
 
     Handles fallback default logo
 
