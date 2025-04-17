@@ -23,16 +23,12 @@ Python script to synchronize groups, harvesters, and logos between GeoNetwork an
    git clone git@github.com:geoadmin/service-geocat-harvest-disaggregation.git
    cd service-geocat-harvest-disaggregation
 
-    Install dependencies:
-    bash
-    Copy
-
+2. Install dependencies:
+   ```bash
     pip install -r requirements.txt
 
-    Configure environment variables (copy .env.example to .env):
-    ini
-    Copy
-
+3. Configure environment variables (copy .env.example to .env):
+   ```bash
     # geocat
     GEOCAT_USER=admin
     GEOCAT_PASSWORD=your_password
@@ -46,16 +42,13 @@ Python script to synchronize groups, harvesters, and logos between GeoNetwork an
     # Viageo
     VIAGEO_API_URL=https://api.viageo.ch/providers
 
-Usage
+## Usage
 
 Run the main script:
-bash
-Copy
-
+   ```bash
 python main.py
-
-Project Structure
-Copy
+```
+## Project Structure
 ```bash
 .
 ├── main.py               # Main script
@@ -69,57 +62,57 @@ Copy
 ├── logo_sync.py      # Logo handling
 └── sftp_handler.py   # SFTP operations
 ```
-Key Modules
-GroupSynchronizer
+## Key Modules
+### GroupSynchronizer
 
-    Syncs Geocat groups with source organizations
+- **Syncs Geocat groups with source organizations
 
-    Manages UUID → Group ID mappings
+- **Manages UUID → Group ID mappings
 
-    Updates group properties
+- **Updates group properties
 
-HarvesterManager
+### HarvesterManager
 
-    Creates/removes organization-specific harvesters
+- Creates/removes organization-specific harvesters
 
-    Configures harvester technical parameters
+- Configures harvester technical parameters
 
-    Manages user permissions
+- Manages user permissions
 
-LogoManager
+### LogoManager
 
-    Downloads logos from Viageo
+- Downloads logos from Viageo
 
-    Uploads to Geocat with proper filenames
+- Uploads to Geocat with proper filenames
 
-    Handles fallback default logo
+- Handles fallback default logo
 
-SFTPHandler
+### SFTPHandler
 
-    Downloads organization JSON from SFTP
+- Downloads organization JSON from SFTP
 
-    Uses SSH key authentication
+- Uses SSH key authentication
 
-Important Notes
+## Important Notes
 
-    Sensitive Files:
+- Sensitive Files:
 
-        Never commit .env (included in .gitignore)
+  - Never commit .env (included in .gitignore)
 
-        Keep SSH keys private
+  - Keep SSH keys private
 
-    Environments:
+- Environments:
 
-        Set GEOCAT_ENV to either dev or prod
+  - Set GEOCAT_ENV to either dev or prod
 
-        S3 paths are configured in config.py
+  - S3 paths are configured in config.py
 
-    Logging:
+- Logging:
 
-        Logs are saved in ./logs/ with timestamps
+  - Logs are saved in ./logs/ with timestamps
 
-        Adjust log level in setup_logging()
+  - Adjust log level in setup_logging()
 
-License
+## License
 
 MIT License - See LICENSE for details.
