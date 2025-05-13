@@ -104,7 +104,7 @@ def main():
     logo_manager.upload_all_logos()
 
     # D’abord récupérer les user_ids
-    for user_name in ["viageo.ch", "Admin_SITG"]:
+    for user_name in [config.VIAGEO_ADMIN, config.SITG_ADMIN]:
         user_id = get_user_id(geocat, user_name)
         if user_id is None:
             logger.error(f"User cannot be found '{user_name}'")

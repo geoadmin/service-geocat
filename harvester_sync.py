@@ -9,7 +9,7 @@ def get_harvesting_directory_path(provider):
         base_path = config.S3_BUCKET_HARVESTING_SITG
     else:
         base_path = config.S3_BUCKET_HARVESTING_VIAGEO
-    return f"{base_path}/{config.GEOCAT_ENV}/byorg/{provider['uuid']}"
+    return f"{base_path}/prod/byorg/{provider['uuid']}"
 
 class HarvesterManager:
     def __init__(self, geocat_client, owner_id, synchronizer):
@@ -34,8 +34,8 @@ class HarvesterManager:
             if not provider:
                 continue
 
-            if (provider["source"] == "viageo" and self.owner_id != self.synchronizer.user_ids.get("viageo.ch")) \
-                or (provider["source"] == "sitg" and self.owner_id != self.synchronizer.user_ids.get("Admin_SITG")):
+            if (provider["source"] == "viageo" and self.owner_id != self.synchronizer.user_ids.get(config.VIAGEO_ADMIN)) \
+                or (provider["source"] == "sitg" and self.owner_id != self.synchronizer.user_ids.get(config.SITG_ADMIN)):
                 continue
 
 

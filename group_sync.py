@@ -66,7 +66,7 @@ class GroupSynchronizer:
     def add_geocat_group(self, provider):
         try:
             expected_logo_name = provider.get("logoUrl")
-            logo_field = expected_logo_name if expected_logo_name else f"{provider['source']}/default_logo.png"
+            logo_field = expected_logo_name if expected_logo_name else self.logo_manager.get_default_logo(provider["source"])            
             group_id = provider.get("group_id", provider["id"])
             group_slug = provider.get("group_slug", provider["slug"])
             group_name = provider.get("group_name", provider["name"])

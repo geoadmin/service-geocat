@@ -119,9 +119,9 @@ class LogoManager:
                 
     def get_default_logo(self, provider_type):
         if provider_type == "viageo":
-            return "viageo/default_logo.png"
+            return "viageo/default_logo_viageo.png"
         elif provider_type == "sitg":
-            return "SITG/default_logo.png"
+            return "SITG/default_logo_sitg.png"
         return "default_logo.png"
 
     def get_csrf_token(self):
