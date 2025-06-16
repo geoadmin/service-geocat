@@ -34,7 +34,7 @@ class ProviderManager:
                     "websiteUrl": provider.get("websiteUrl", ""),
                     "logoUrl": provider.get("logoUrl", ""),
                     "source": "viageo",
-                    "email": "xavier.merour@asit-asso.ch",
+                    "email": "",
                     "directory": f"{config.S3_BUCKET_HARVESTING_VIAGEO}/{config.GEOCAT_ENV}/byorg/{provider['uuid']}",
                     "beforeScript": "/mnt/geonetwork_data/data/s3sync-geocat-folders.sh asit-geocat-ch"
                 }
@@ -80,7 +80,6 @@ class ProviderManager:
                         "email": "markus.kesseler@etat.ge.ch",
                         "directory": f"{config.S3_BUCKET_HARVESTING_SITG}/{config.GEOCAT_ENV}/byorg/{org['uuid']}",
                         "beforeScript": "/mnt/geonetwork_data/data/s3sync-geocat-folders.sh ge-geocat-ch",
-                        # Groupe GeoCat
                         "group_id": group_id,
                         "group_slug": group_slug,
                         "group_name": group_name
