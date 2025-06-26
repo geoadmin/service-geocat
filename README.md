@@ -48,7 +48,7 @@ The script will:
 - Check if the XML folder exists.
 - Authenticate the user.
 - Upload each XML file.
-- Update the revision date if `UPDATE_DATE_STAMP` is set to `True`.
+- Update the date stamp of the metadata if `UPDATE_DATE_STAMP` is set to `True`.
 
 ## Automation
 
