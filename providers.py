@@ -69,6 +69,11 @@ class ProviderManager:
                     group_name = "Canton de Genève" if is_departement else org["name"]
                     group_id = ProviderManager.generate_group_id(group_slug)
 
+                    if config.GEOCAT_ENV == "int":
+                        directory = f"{config.S3_BUCKET_HARVESTING_SITG}/rec/byorg/{org['uuid']}"
+                    else:
+                        directory = f"{config.S3_BUCKET_HARVESTING_SITG}/{config.GEOCAT_ENV}/byorg/{org['uuid']}"
+
                     sitg_providers[org["uuid"]] = {
                         "id": group_id,
                         "uuid": org["uuid"],
@@ -78,7 +83,7 @@ class ProviderManager:
                         "logoUrl": f"{org['uuid']}.png",
                         "source": "sitg",
                         "email": "markus.kesseler@etat.ge.ch",
-                        "directory": f"{config.S3_BUCKET_HARVESTING_SITG}/{config.GEOCAT_ENV}/byorg/{org['uuid']}",
+                        "directory": directory,
                         "beforeScript": "/mnt/geonetwork_data/data/s3sync-geocat-folders.sh ge-geocat-ch",
                         "group_id": group_id,
                         "group_slug": group_slug,
