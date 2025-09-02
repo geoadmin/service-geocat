@@ -20,18 +20,19 @@ def upload_md(
     PARAMETER_REJECT_IF_INVALID,
     PARAMETER_PUBLISH_TO_ALL,
     UPDATE_DATE_STAMP,
-    PROXY_HTTP=None,
-    PROXY_HTTPS=None
+    PROXY_HTTP,
+    PROXY_HTTPS
 ):
     session = requests.Session()
     session.auth = (GEOCAT_USERNAME, GEOCAT_PASSWORD)
 
-    http_proxy = os.environ.get("HTTP_PROXY") or PROXY_HTTP
-    https_proxy = os.environ.get("HTTPS_PROXY") or PROXY_HTTPS
+    # Use proxies passed as parameters or default to empty strings
+    http_proxy = PROXY_HTTP or ""
+    https_proxy = PROXY_HTTPS or ""
     if http_proxy or https_proxy:
         session.proxies.update({
-            "http": http_proxy or "",
-            "https": https_proxy or ""
+            "http": http_proxy,
+            "https": https_proxy
         })
         logging.info(f"Using proxies: {session.proxies}")
 
