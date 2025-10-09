@@ -10,8 +10,8 @@ PROXY_HTTPS = os.getenv('HTTPS_PROXY')
 
 API_URL = 'https://geocat-int.dev.bgdi.ch/geonetwork/srv/api'
 PARAMETER_UUID_PROCESSING = 'OVERWRITE'
-PARAMETER_GROUP = '00000'  # Replace with the actual group number
-PARAMETER_REJECT_IF_INVALID = 'True'
-PARAMETER_PUBLISH_TO_ALL = 'True'
-PATH_TO_XML_FILES = os.path.expanduser('path/to/xmls/folder')  # Update this path to your XML files
-UPDATE_DATE_STAMP = True  # Default value for the new parameter
+PARAMETER_GROUP = '42'  # Replace with the actual group number
+PARAMETER_VALIDATION = 'True'
+PARAMETER_PUBLICATION = 'True'
+PATH_TO_MD_FILES = os.path.expanduser('/home/cuo/Bureau/test_API')  # Update this path to your MD files
+# UPDATE_DATE_STAMP = True  # Default value for the new parameter

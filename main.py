@@ -5,20 +5,20 @@ import os
 import sys
 
 def main():
-    if not os.path.isdir(config.PATH_TO_XML_FILES):
-        print(f"❓ Error: Folder {config.PATH_TO_XML_FILES} doesn't exist.")
+    if not os.path.isdir(config.PATH_TO_MD_FILES):
+        print(f"❓ Error: Folder {config.PATH_TO_MD_FILES} doesn't exist.")
         sys.exit(1)
     try:
         upload_md(
             GEOCAT_USERNAME,
             GEOCAT_PASSWORD,
-            PATH_TO_XML_FILES,
+            PATH_TO_MD_FILES,
             API_URL,
             PARAMETER_UUID_PROCESSING,
             PARAMETER_GROUP,
-            PARAMETER_REJECT_IF_INVALID,
-            PARAMETER_PUBLISH_TO_ALL,
-            UPDATE_DATE_STAMP,
+            PARAMETER_VALIDATION,
+            PARAMETER_PUBLICATION,
+            # UPDATE_DATE_STAMP,
             PROXY_HTTP,
             PROXY_HTTPS
         )
