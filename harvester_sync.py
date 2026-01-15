@@ -127,7 +127,7 @@ class HarvesterManager:
 
             options = SubElement(node, "options")
             SubElement(options, "oneRunOnly").text = "false"
-            SubElement(options, "overrideUuid").text = "OVERRIDE"
+            SubElement(options, "overrideUuid").text = "SKIP"
             SubElement(options, "every").text = "0 0 5 * * ?"
             SubElement(options, "status").text = "active"
 
