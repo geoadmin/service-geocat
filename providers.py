@@ -1,6 +1,7 @@
 import logging
 import json
 import os
+import hashlib
 import config
 from sftp_handler import SFTPHandler
 
@@ -9,91 +10,108 @@ logger = logging.getLogger(__name__)
 class ProviderManager:
     def __init__(self):
         self.providers = {}
-        self.existing_group_ids = set()
+        self.provider_count = {"viageo": 0, "sitg": 0}
 
-
+    @staticmethod
     def generate_group_id(slug: str) -> int:
-        return abs(sum(ord(char) for char in slug)) % 1000000
+        """Generate unique group ID from slug using MD5 hash"""
+        hash_value = int(hashlib.md5(slug.encode()).hexdigest(), 16)
+        group_id = 50000000 + (hash_value % 10000000)
+        return group_id
 
     def load_viageo_providers(self, geocat_client):
-        """Uploading providers from the Viageo API"""
+        """Load providers from Viageo API"""
         logger.info("Fetching providers from Viageo")
         try:
             response = geocat_client.session.get(config.VIAGEO_API_URL)
             response.raise_for_status()
             providers = response.json()
             
-            # Normaliser les données Viageo
-            viageo_providers = {}
             for provider in providers:
-                viageo_providers[provider["uuid"]] = {
-                    "id": provider["id"],
-                    "uuid": provider["uuid"],
-                    "name": provider["name"],
-                    "slug": provider["slug"],
+                uuid = provider.get("uuid")
+                slug = provider.get("slug")
+                
+                if not uuid or not slug:
+                    logger.warning(f"Provider missing uuid or slug: {provider}")
+                    continue
+                
+                group_id = self.generate_group_id(slug)
+                
+                self.providers[uuid] = {
+                    "uuid": uuid,
+                    "id": provider.get("id"),
+                    "group_id": group_id,
+                    "name": provider.get("name"),
+                    "slug": slug,
+                    "group_slug": slug,
+                    "group_name": provider.get("name"),
                     "websiteUrl": provider.get("websiteUrl", ""),
                     "logoUrl": provider.get("logoUrl", ""),
+                    "logo_filename": f"{slug}.png",
                     "source": "viageo",
                     "email": "",
-                    "directory": f"{config.S3_BUCKET_HARVESTING_VIAGEO}/{config.GEOCAT_ENV}/byorg/{provider['uuid']}",
+                    "directory": f"{config.S3_BUCKET_HARVESTING_VIAGEO}/prod/byorg/{uuid}",
                     "beforeScript": "/mnt/geonetwork_data/data/s3sync-geocat-folders.sh asit-geocat-ch"
                 }
-            self.providers.update(viageo_providers)
-            logger.info(f"{len(viageo_providers)} providers retrieved from Viageo")
+                self.provider_count["viageo"] += 1
+            
+            logger.info(f"{self.provider_count['viageo']} providers retrieved from Viageo")
+            
         except Exception as e:
             logger.error(f"Error fetching Viageo providers: {e}")
 
-    def load_sitg_providers(self, s3_bucket_path):
-        logger.info("Fetching providers from SITG (S3 bucket)")
+    def load_sitg_providers(self):
+        """Load providers from SITG JSON (already downloaded by main.py)"""
+        logger.info("Loading providers from SITG JSON file")
         try:
             local_path = "./providers/organisations_sitg.json"
-            remote_path = f"{s3_bucket_path}/organisations.json"
-
-            sftp = SFTPHandler(
-                host=os.getenv("SFTP_HOST"),
-                username=os.getenv("SFTP_USERNAME"),
-                private_key_path=os.getenv("SFTP_PRIVATE_KEY_PATH")
-            )
-            sftp.connect()
-            sftp.download_file(remote_path, local_path)
-            sftp.close()
 
             with open(local_path, "r", encoding="utf-8") as file:
                 data = json.load(file)
-                sitg_providers = {}
 
                 for org in data.get("organisations", []):
-                    is_departement = org["slug"].startswith("departement")
-
-                    group_slug = "canton-de-geneve" if is_departement else org["slug"]
-                    group_name = "Canton de Genève" if is_departement else org["name"]
-                    group_id = ProviderManager.generate_group_id(group_slug)
+                    uuid = org.get("uuid")
+                    slug = org.get("slug")
+                    
+                    if not uuid or not slug:
+                        logger.warning(f"Organisation missing uuid or slug: {org}")
+                        continue
+                    
+                    is_departement = slug.startswith("departement")
+                    group_slug = "canton-de-geneve" if is_departement else slug
+                    group_name = "Canton de Genève" if is_departement else org.get("name")
+                    group_id = self.generate_group_id(group_slug)
 
                     if config.GEOCAT_ENV == "int":
-                        directory = f"{config.S3_BUCKET_HARVESTING_SITG}/rec/byorg/{org['uuid']}"
+                        directory = f"{config.S3_BUCKET_HARVESTING_SITG}/rec/byorg/{uuid}"
                     else:
-                        directory = f"{config.S3_BUCKET_HARVESTING_SITG}/{config.GEOCAT_ENV}/byorg/{org['uuid']}"
+                        directory = f"{config.S3_BUCKET_HARVESTING_SITG}/prod/byorg/{uuid}"
 
-                    sitg_providers[org["uuid"]] = {
-                        "id": group_id,
-                        "uuid": org["uuid"],
-                        "name": org["name"],
-                        "slug": org["slug"],
+                    self.providers[uuid] = {
+                        "uuid": uuid,
+                        "id": self.generate_group_id(slug),
+                        "group_id": group_id,
+                        "name": org.get("name"),
+                        "slug": slug,
+                        "group_slug": group_slug,
+                        "group_name": group_name,
                         "websiteUrl": org.get("websiteUrl", ""),
-                        "logoUrl": f"{org['uuid']}.png",
+                        "logoUrl": org.get("logoUrl", ""),
+                        "logo_filename": f"{slug}.png",
                         "source": "sitg",
                         "email": "markus.kesseler@etat.ge.ch",
                         "directory": directory,
-                        "beforeScript": "/mnt/geonetwork_data/data/s3sync-geocat-folders.sh ge-geocat-ch",
-                        "group_id": group_id,
-                        "group_slug": group_slug,
-                        "group_name": group_name
+                        "beforeScript": "/mnt/geonetwork_data/data/s3sync-geocat-folders.sh ge-geocat-ch"
                     }
+                    self.provider_count["sitg"] += 1
 
-            self.providers.update(sitg_providers)
-            logger.info(f"{len(sitg_providers)} providers retrieved from SITG")
+            logger.info(f"{self.provider_count['sitg']} providers retrieved from SITG")
+            
+        except FileNotFoundError:
+            logger.error(f"SITG JSON file not found: {local_path}")
+            logger.error("Make sure download_organisation_json() was called first")
         except Exception as e:
-            logger.error(f"Error fetching SITG providers: {e}")
+            logger.error(f"Error loading SITG providers: {e}")
 
     def get_all_providers(self):
         """Return all loaded providers"""

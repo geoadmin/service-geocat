@@ -4,6 +4,7 @@ import config
 from xml.etree.ElementTree import Element, SubElement, tostring, fromstring
 
 logger = logging.getLogger(__name__)
+
 def get_harvesting_directory_path(provider):
     if provider.get("source") == "sitg":
         base_path = config.S3_BUCKET_HARVESTING_SITG
@@ -29,139 +30,151 @@ class HarvesterManager:
     def sync_harvesters(self):
         self.fetch_harvesters()
 
-        for group_id in self.synchronizer.added_group_ids:
-            provider = self.synchronizer.providers.get(group_id)
+        logger.info(f"Processing {len(self.synchronizer.added_group_ids)} providers for harvester sync")
+
+        for provider_uuid in self.synchronizer.added_group_ids:
+            provider = self.synchronizer.providers.get(provider_uuid)
+            
             if not provider:
+                logger.warning(f"Provider {provider_uuid} not found in providers list")
                 continue
 
-            if (provider["source"] == "viageo" and self.owner_id != self.synchronizer.user_ids.get(config.VIAGEO_ADMIN)) \
-                or (provider["source"] == "sitg" and self.owner_id != self.synchronizer.user_ids.get(config.SITG_ADMIN)):
+            if (provider["source"] == "viageo" and self.owner_id != self.synchronizer.user_ids.get(config.VIAGEO_ADMIN)):
+                logger.debug(f"Skipping Viageo provider '{provider['slug']}' (wrong owner)")
+                continue
+                
+            if (provider["source"] == "sitg" and self.owner_id != self.synchronizer.user_ids.get(config.SITG_ADMIN)):
+                logger.debug(f"Skipping SITG provider '{provider['slug']}' (wrong owner)")
                 continue
 
-
-            group_name = provider['slug']
+            provider_slug = provider['slug']
             group_logo_url = provider.get('logoUrl')
 
-            if self.harvester_exists_for_group(group_id):
-                logger.info(f"Harvester already exists for group '{group_name}' (ID: {group_id})")
+            if self.harvester_exists_for_provider(provider_uuid):
+                logger.info(f"Harvester already exists for provider '{provider_slug}' (UUID: {provider_uuid})")
             else:
-                self.create_harvester_for_group(group_id, group_name, group_logo_url)
+                logger.info(f"Creating harvester for provider '{provider_slug}' (UUID: {provider_uuid})")
+                self.create_harvester_for_provider(provider_uuid, provider_slug, group_logo_url)
 
-    def harvester_exists_for_group(self, group_id):
-        provider = self.synchronizer.providers.get(group_id)
+    def harvester_exists_for_provider(self, provider_uuid):
+        """Check if harvester exists by comparing directory paths"""
+        provider = self.synchronizer.providers.get(provider_uuid)
         if not provider:
-            logger.error(f"Provider avec ID {group_id} introuvable.")
+            logger.error(f"Provider with UUID {provider_uuid} not found")
             return False
 
-        directory_path = get_harvesting_directory_path(provider)
+        directory_path = provider.get("directory")
+        if not directory_path:
+            logger.error(f"No directory defined for provider {provider_uuid}")
+            return False
+
         for harvester in self.harvesters:
             if isinstance(harvester, dict):
                 harvester_directory = harvester.get('site', {}).get('directory', '')
                 if harvester_directory == directory_path:
-                    logger.debug(f"Harvesting found : directory_path={directory_path}")
+                    logger.debug(f"Harvester found for directory: {directory_path}")
                     return True
-        logger.debug(f"No harvesting found for directory_path={directory_path}")
+        
+        logger.debug(f"No harvester found for directory: {directory_path}")
         return False
 
-
-    def create_harvester_for_group(self, group_id, group_name, group_logo_url):
+    def create_harvester_for_provider(self, provider_uuid, provider_slug, group_logo_url):
+        """Create harvester for a specific provider"""
         try:
-            provider = self.synchronizer.providers.get(group_id)
+            provider = self.synchronizer.providers.get(provider_uuid)
             if not provider:
-                logger.error(f"Provider with ID {group_id} not found.")
+                logger.error(f"Provider with UUID {provider_uuid} not found")
                 return
             
-            directory_path = get_harvesting_directory_path(provider)
-
-            # Logo management for provider
-            try:
-                if group_logo_url:
-                    expected_logo_name = os.path.basename(group_logo_url)
-                    if self.synchronizer.logo_manager and expected_logo_name in self.synchronizer.logo_manager.existing_logos:
-                        icon = expected_logo_name
-                    else:
-                        icon = "default_logo.png"
-                else:
-                    icon = "default_logo.png"
-            except Exception as e:
-                logger.error(f"Error when managing the logo for the group '{group_name}': {e}")
-                icon = "default_logo.png"
-
-            # Harvesting name
-            try:
-                harvester_name = provider["slug"]
-                directory_path = provider["directory"]
-                before_script = provider["beforeScript"]
-
-                node = Element("node", id="", type="filesystem")
-                ownerGroup = SubElement(node, "ownerGroup")
-                SubElement(ownerGroup, "id").text = str(provider["group_id"])
-
-                ownerUser = SubElement(node, "ownerUser")
-                SubElement(ownerUser, "id").text = str(self.owner_id)
-
-                site = SubElement(node, "site")
-                SubElement(site, "name").text = harvester_name
-                SubElement(site, "recurse").text = "true"
-                SubElement(site, "nodelete").text = "false"
-                SubElement(site, "checkFileLastModifiedForUpdate").text = "true"
-                SubElement(site, "directory").text = directory_path
-                SubElement(site, "recordType").text = "Metadata"
-                SubElement(site, "icon").text = icon
-                SubElement(site, "beforeScript").text = before_script
-
-                options = SubElement(node, "options")
-                SubElement(options, "oneRunOnly").text = "false"
-                SubElement(options, "overrideUuid").text = "OVERRIDE"
-                SubElement(options, "every").text = "0 0 5 * * ?"
-                SubElement(options, "status").text = "active"
-
-                content = SubElement(node, "content")
-                SubElement(content, "validate").text = "NOVALIDATION"
-                SubElement(content, "importxslt").text = "none"
-                SubElement(content, "batchEdits").text = "<![CDATA[[]]]>"
-
-                privileges = SubElement(node, "privileges")
-                group_privilege = SubElement(privileges, "group", id="1")
-                SubElement(group_privilege, "operation", name="view")
-                SubElement(group_privilege, "operation", name="dynamic")
-                SubElement(group_privilege, "operation", name="download")
-
-                categories = SubElement(node, "categories")
-                SubElement(categories, "category", id="")
-
-                SubElement(node, "ifRecordExistAppendPrivileges").text = "false"
-            except Exception as e:
-                logger.error(f"Erreur lors de la création du noeud XML pour le moissonneur '{harvester_name}': {e}")
+            directory_path = provider.get("directory")
+            if not directory_path:
+                logger.error(f"No directory defined for provider {provider_uuid}")
                 return
 
-            # Envoi du moissonneur à GeoCat
-            try:
-                harvester_xml_data = tostring(node, encoding="unicode")
-                harvester_url = f"{self.geocat_client.env}/geonetwork/srv/eng/admin.harvester.add?_content_type=json"
-                headers = {
-                    "Content-Type": "application/xml",
-                    "Accept": "application/json",
-                    "X-XSRF-TOKEN": self.geocat_client.session.cookies.get("XSRF-TOKEN"),
-                }
+            group_id = provider.get("group_id")
+            if not group_id:
+                logger.error(f"No group_id found for provider '{provider_slug}'")
+                return
 
-                response = self.geocat_client.session.post(harvester_url, headers=headers, data=harvester_xml_data)
+            # Logo management
+            logo_filename = f"{provider_slug}.png"
+            if self.synchronizer.logo_manager and logo_filename in self.synchronizer.logo_manager.existing_logos:
+                icon = logo_filename
+            else:
+                icon = "default_logo.png"
 
-                if response.status_code == 200:
-                    harvester_data = response.json()
-                    if isinstance(harvester_data, list) and harvester_data:
-                        harvester_id = harvester_data[0]
-                        logger.info(f"Harvester for group '{harvester_name}' successfully created with ID {harvester_id}.")                        
-                        self.start_harvester(harvester_id)
-                    else:
-                        logger.error(f"Unexpected response format for harvester '{harvester_name}': {harvester_data}")
-                else:
-                    logger.error(f"Failed to create harvester for group '{harvester_name}': {response.status_code}, {response.text}")
-            except Exception as e:
-                logger.error(f"Error when creating the harvester '{harvester_name}': {e}")
+            # Harvester configuration
+            harvester_name = provider_slug
+            before_script = provider.get("beforeScript", "")
+
+            node = Element("node", id="", type="filesystem")
+            
+            ownerGroup = SubElement(node, "ownerGroup")
+            SubElement(ownerGroup, "id").text = str(group_id)
+
+            ownerUser = SubElement(node, "ownerUser")
+            SubElement(ownerUser, "id").text = str(self.owner_id)
+
+            site = SubElement(node, "site")
+            SubElement(site, "name").text = harvester_name
+            SubElement(site, "recurse").text = "true"
+            SubElement(site, "nodelete").text = "false"
+            SubElement(site, "checkFileLastModifiedForUpdate").text = "true"
+            SubElement(site, "directory").text = directory_path
+            SubElement(site, "recordType").text = "METADATA"
+            SubElement(site, "icon").text = icon
+            SubElement(site, "beforeScript").text = before_script
+
+            options = SubElement(node, "options")
+            SubElement(options, "oneRunOnly").text = "false"
+            SubElement(options, "overrideUuid").text = "OVERRIDE"
+            SubElement(options, "every").text = "0 0 5 * * ?"
+            SubElement(options, "status").text = "active"
+
+            content = SubElement(node, "content")
+            SubElement(content, "validate").text = "NOVALIDATION"
+            SubElement(content, "importxslt").text = "none"
+            SubElement(content, "batchEdits").text = "<![CDATA[[]]]>"
+
+            privileges = SubElement(node, "privileges")
+            group_privilege = SubElement(privileges, "group", id="1")
+            SubElement(group_privilege, "operation", name="view")
+            SubElement(group_privilege, "operation", name="dynamic")
+            SubElement(group_privilege, "operation", name="download")
+
+            categories = SubElement(node, "categories")
+            SubElement(categories, "category", id="")
+
+            SubElement(node, "ifRecordExistAppendPrivileges").text = "false"
+
         except Exception as e:
-            logger.error(f"General error in the creation of the harvester for the group '{group_name}': {e}")
+            logger.error(f"Error creating XML node for harvester '{harvester_name}': {e}")
+            return
 
+        try:
+            harvester_xml_data = tostring(node, encoding="unicode")
+            harvester_url = f"{self.geocat_client.env}/geonetwork/srv/eng/admin.harvester.add?_content_type=json"
+            headers = {
+                "Content-Type": "application/xml",
+                "Accept": "application/json",
+                "X-XSRF-TOKEN": self.geocat_client.session.cookies.get("XSRF-TOKEN"),
+            }
+
+            response = self.geocat_client.session.post(harvester_url, headers=headers, data=harvester_xml_data)
+
+            if response.status_code == 200:
+                harvester_data = response.json()
+                if isinstance(harvester_data, list) and harvester_data:
+                    harvester_id = harvester_data[0]
+                    logger.info(f"✅ Harvester '{harvester_name}' successfully created with ID {harvester_id}")
+                    self.start_harvester(harvester_id)
+                else:
+                    logger.error(f"Unexpected response format for harvester '{harvester_name}': {harvester_data}")
+            else:
+                logger.error(f"❌ Failed to create harvester '{harvester_name}': {response.status_code}, {response.text}")
+                
+        except Exception as e:
+            logger.error(f"Error creating harvester '{harvester_name}': {e}")
 
     def start_harvester(self, harvester_id):
         start_url = f"{self.geocat_client.env}/geonetwork/srv/eng/admin.harvester.start?_content_type=json&id={harvester_id}"
@@ -179,8 +192,7 @@ class HarvesterManager:
         if run_response.status_code == 200:
             logger.info(f"Harvester ID {harvester_id} successfully started (run initiated).")
         else:
-            logger.error(f"Failed to start harvester ID {harvester_id}: {run_response.status_code}, {run_response.text}")         
-
+            logger.error(f"Failed to start harvester ID {harvester_id}: {run_response.status_code}, {run_response.text}")
 
     def delete_harvester_for_group(self, viageo_group_id):
         provider = self.synchronizer.viageo_providers.get(viageo_group_id)

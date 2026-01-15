@@ -26,6 +26,10 @@ SFTP_HOST = os.getenv("SFTP_HOST", "sftp.example.com")
 SFTP_USERNAME = os.getenv("SFTP_USERNAME", "user")
 SFTP_PRIVATE_KEY_PATH = os.getenv("SFTP_PRIVATE_KEY_PATH", "C:/Users/me/private_key_SSH")
 
+#admin user
+VIAGEO_ADMIN = "viageo.ch"
+SITG_ADMIN = "admin_SITG"
+
 # Config Harvesting path
 S3_BUCKET_HARVESTING_VIAGEO = "/mnt/s3/asit-geocat-ch"
 S3_BUCKET_HARVESTING_SITG = "/mnt/s3/ge-geocat-ch"

@@ -17,7 +17,6 @@ class LogoManager:
         self.geocat_logos_api_url = f"{geocat_base_url}/geonetwork/srv/api/logos"
         self.provider_logo_mapping = {}
 
-        # Créer les répertoires si nécessaires
         self.ensure_directory(self.save_directory)
         self.ensure_directory(self.sitg_logo_directory)
         self.ensure_directory(self.viageo_logo_directory)
@@ -51,14 +50,18 @@ class LogoManager:
             for provider in providers:
                 logo_url = provider.get("logoUrl")
                 provider_id = provider.get("id")
-                if logo_url and provider_id:
-                    logo_filename = os.path.basename(logo_url)
+                slug = provider.get("slug")
+                
+                if logo_url and slug:
+                    original_extension = os.path.splitext(logo_url)[1]
+                    logo_filename = f"{slug}{original_extension}"
                     save_path = os.path.join(self.viageo_logo_directory, logo_filename)
 
-                    # Télécharger le logo même s'il existe dans geocat, pour l'avoir en local
                     logger.info(f"Téléchargement du logo '{logo_filename}' depuis '{logo_url}' vers '{save_path}'")
                     self.download_logo(logo_url, save_path)
                     self.provider_logo_mapping[provider_id] = logo_filename
+                else:
+                    logger.warning(f"Slug ou logoUrl manquant pour le provider {provider_id}")
 
         except requests.exceptions.RequestException as e:
             logger.error(f"Error fetching provider information from Viageo: {e}")
@@ -119,9 +122,9 @@ class LogoManager:
                 
     def get_default_logo(self, provider_type):
         if provider_type == "viageo":
-            return "viageo/default_logo_viageo.png"
+            return "default_logo_viageo.png"
         elif provider_type == "sitg":
-            return "SITG/default_logo_sitg.png"
+            return "default_logo_sitg.png"
         return "default_logo.png"
 
     def get_csrf_token(self):
