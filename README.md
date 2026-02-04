@@ -1,4 +1,4 @@
-# geocat Harvesting Script
+# geocat auotomatized upload Script
 
 This project automates the upload of XML and MEF (`.zip`) metadata records to the geocat.ch (GeoNetwork) API.
 
