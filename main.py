@@ -25,6 +25,17 @@ load_dotenv()
 
 logger = logging.getLogger(__name__)
 
+# TEST_MODE: if True, all emails are sent only to TEST_EMAIL via a local SMTP (e.g. MailHog)
+TEST_MODE = os.environ.get("TEST_MODE", "false").lower() == "true"
+TEST_EMAIL = os.environ.get("TEST_EMAIL", config.MAIL_SENDER)
+SMTP_PORT = int(os.environ.get("SMTP_PORT", 25))
+USER_FILTER = os.environ.get("USER_FILTER", "").strip()
+
+if TEST_MODE:
+    logger.warning("Running in TEST_MODE - all emails will be sent to %s", TEST_EMAIL)
+if USER_FILTER:
+    logger.warning("USER_FILTER active - processing only username: %s", USER_FILTER)
+
 geocat = geopycat.geocat(env="prod")
 
 # Set proxies in environment variables
@@ -47,9 +58,16 @@ except Exception as e:
 
 user_count = 0
 
+# Global cache of valid URLs across all users - avoids re-testing the same URL
+valid_url = []
+
 for user in users:
 
     user_count += 1
+
+    # Skip users not matching USER_FILTER (if set)
+    if USER_FILTER and user["username"] != USER_FILTER:
+        continue
 
     logger.info("Processing User [%s/%s] ID: %s (%s %s)",
                 user_count, len(users), user["id"], user["name"], 
@@ -73,15 +91,15 @@ for user in users:
                        user_count, len(users), user["id"]) 
         continue
 
-    # For Production, send email to group admin and to receiver
-    receivers = [user["emailAddresses"][0], config.MAIL_SENDER]
-
-    # For test purpose, send email only to the sender
-    # receivers = [config.MAIL_SENDER]
+    # In TEST_MODE, send all emails only to TEST_EMAIL
+    # In production, send to the metadata owner and to MAIL_SENDER
+    if TEST_MODE:
+        receivers = [TEST_EMAIL]
+    else:
+        receivers = [user["emailAddresses"][0], config.MAIL_SENDER]
 
     # list of tested URL that are valid
-    # We do not test them again
-    valid_url = []
+    # We do not test them again (shared across all users)
 
     report = []
 
@@ -107,16 +125,18 @@ for user in users:
         host = os.environ.get("SMTP_ENDPOINT")
 
         try:
-            with SMTP(host) as server:
+            with SMTP(host, SMTP_PORT) as server:
                 server.sendmail(config.MAIL_SENDER, receivers, message.as_string())
 
         except Exception as e:
             logger.exception(e)
 
         else:
-            logger.info("User [%s/%s] ID: %s (%s %s) - Mail sent to %s",
+            log_dest = TEST_EMAIL if TEST_MODE else user["emailAddresses"][0]
+            logger.info("User [%s/%s] ID: %s (%s %s) - Mail sent to %s%s",
                         user_count, len(users), user["id"], user["name"],
-                        user["surname"], user["emailAddresses"][0])
+                        user["surname"], log_dest,
+                        " [TEST MODE]" if TEST_MODE else "")
 
     else:
         logger.info("User [%s/%s] ID: %s (%s %s) - has no invalid URL",
