@@ -25,7 +25,11 @@ SEARCH_API_BODY = {
     "size": 3000
 }
 
-MAIL_SENDER = "olivier.curdy@swisstopo.ch"
+MAIL_SENDER = "geocat@swisstopo.ch"
+
+# Mail backend: "outlook" (uses local Outlook COM, no password needed)
+#              "smtp"    (uses SMTP server defined in .env)
+MAIL_BACKEND = "outlook"
 
 MAIL_SUBJECT = "geocat.ch - Invalid URL in your metadata"
 

@@ -1,7 +1,6 @@
 import os
 import sys
 import copy
-from smtplib import SMTP
 from dotenv import load_dotenv
 import config
 import geopycat
@@ -28,7 +27,6 @@ logger = logging.getLogger(__name__)
 # TEST_MODE: if True, all emails are sent only to TEST_EMAIL via a local SMTP (e.g. MailHog)
 TEST_MODE = os.environ.get("TEST_MODE", "false").lower() == "true"
 TEST_EMAIL = os.environ.get("TEST_EMAIL", config.MAIL_SENDER)
-SMTP_PORT = int(os.environ.get("SMTP_PORT", 25))
 USER_FILTER = os.environ.get("USER_FILTER", "").strip()
 
 if TEST_MODE:
@@ -122,11 +120,8 @@ for user in users:
                                             receiver=receivers[0],
                                             user_name=user['username'])
 
-        host = os.environ.get("SMTP_ENDPOINT")
-
         try:
-            with SMTP(host, SMTP_PORT) as server:
-                server.sendmail(config.MAIL_SENDER, receivers, message.as_string())
+            link_checker.send_email(receivers=receivers, message=message)
 
         except Exception as e:
             logger.exception(e)
