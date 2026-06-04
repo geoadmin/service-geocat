@@ -1,9 +1,9 @@
 import os
 import sys
 import copy
-from smtplib import SMTP
 from dotenv import load_dotenv
 import config
+import argparse
 import geopycat
 import logging
 import logging.config
@@ -23,17 +23,49 @@ import utils
 
 load_dotenv()
 
+# HARVESTER_ONLY override order: CLI -> env var -> config
+# CLI flags: --harvester-only (only harvesters), --all-partners (include local)
+harvester_only_flag = config.HARVESTER_ONLY
+env_val = os.environ.get("HARVESTER_ONLY")
+if env_val is not None:
+    if env_val.lower() in ("1", "true", "yes", "y"):
+        harvester_only_flag = True
+    elif env_val.lower() in ("0", "false", "no", "n"):
+        harvester_only_flag = False
+
+parser = argparse.ArgumentParser(add_help=False)
+group = parser.add_mutually_exclusive_group()
+group.add_argument("--harvester-only", dest="harvester_only", action="store_true", help="Target only harvesters")
+group.add_argument("--all-partners", dest="harvester_only", action="store_false", help="Target all partners (local + harvested)")
+parser.set_defaults(harvester_only=None)
+args, _ = parser.parse_known_args()
+if args.harvester_only is not None:
+    harvester_only_flag = args.harvester_only
+
 logger = logging.getLogger(__name__)
 
 geocat = geopycat.geocat(env="prod")
 
+# Determine whether to request only harvesters or all users
+harvester_only_flag = getattr(config, "HARVESTER_ONLY", True)
+
 try:
-    users = geocat.get_users(harvester_only=True)
-except:
-    logger.error("Cannot retrieve users information")
-    sys.exit()
+    try:
+        users = geocat.get_users(harvester_only=harvester_only_flag)
+    except Exception:
+        logger.warning("Failed to retrieve users — waiting for connectivity and retrying...")
+        import utils as _utils
+        _utils._wait_for_connectivity()
+        users = geocat.get_users(harvester_only=harvester_only_flag)
+except Exception:
+    logger.exception("Cannot retrieve users information")
+    sys.exit(1)
 
 user_count = 0
+
+# If HARVESTER_ONLY is False, we target all partners and should use the
+# alternate mail body texts.
+all_partners = not harvester_only_flag
 
 for user in users:
 
@@ -97,13 +129,13 @@ for user in users:
     if len(invalid_metadata) > 0:
         message = utils.get_message(invalid_metadata=invalid_metadata,
                             receiver=receivers[0],
-                            user_name=user['username'])
+                            user_name=user['username'],
+                            all_partners=all_partners)
 
         host = os.environ.get("SMTP_ENDPOINT")
 
         try:
-            with SMTP(host) as server:
-                server.sendmail(config.MAIL_SENDER, receivers, message.as_string())
+            utils.send_email(receivers=receivers, message=message)
 
         except Exception as e:
             logger.exception(e)
