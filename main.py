@@ -1,6 +1,7 @@
 import os
 import sys
 import copy
+import json
 from dotenv import load_dotenv
 import config
 import argparse
@@ -23,6 +24,16 @@ import utils
 
 load_dotenv()
 
+# Disable SSL certificate verification globally (corporate proxy / self-signed cert)
+import urllib3
+import requests as _requests
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+_original_request = _requests.Session.request
+def _request_no_verify(self, method, url, **kwargs):
+    kwargs.setdefault("verify", False)
+    return _original_request(self, method, url, **kwargs)
+_requests.Session.request = _request_no_verify
+
 # HARVESTER_ONLY override order: CLI -> env var -> config
 # CLI flags: --harvester-only (only harvesters), --all-partners (include local)
 harvester_only_flag = config.HARVESTER_ONLY
@@ -38,9 +49,12 @@ group = parser.add_mutually_exclusive_group()
 group.add_argument("--harvester-only", dest="harvester_only", action="store_true", help="Target only harvesters")
 group.add_argument("--all-partners", dest="harvester_only", action="store_false", help="Target all partners (local + harvested)")
 parser.set_defaults(harvester_only=None)
+parser.add_argument("--start-from", dest="start_from", type=int, default=1,
+                    help="Start processing from this user index (1-based, as shown in logs)")
 args, _ = parser.parse_known_args()
 if args.harvester_only is not None:
     harvester_only_flag = args.harvester_only
+start_from_index = args.start_from
 
 logger = logging.getLogger(__name__)
 
@@ -71,20 +85,40 @@ for user in users:
 
     user_count += 1
 
+    if user_count < start_from_index:
+        continue
+
     logger.info("Processing User [%s/%s] ID: %s (%s %s)",
                 user_count, len(users), user["id"], user["name"], 
                 user["surname"])
 
-    query = geopycat.utils.get_search_query(published_only=True,
-                        q=f"owner:{user['id']}")
+    query = geopycat.utils.get_search_query(published_only=True, q=f"owner:{user['id']}")
 
     body = copy.deepcopy(config.SEARCH_API_BODY)
     body["query"] = query
+    body["size"] = 2000
 
+    _headers = {"accept": "application/json", "Content-Type": "application/json"}
     try:
-        indexes = geocat.es_deep_search(body=body)
-    except:
-        logger.error("User [%s/%s] ID: %s - unable to retreieve metadata index",
+        indexes = []
+        while True:
+            response = geocat.session.post(
+                url=f"{geocat.env}/geonetwork/srv/api/search/records/_search",
+                headers=_headers,
+                data=json.dumps(body),
+                verify=False
+            )
+            if response.status_code != 200:
+                logger.error("User [%s/%s] ID: %s - search returned HTTP %s",
+                        user_count, len(users), user["id"], response.status_code)
+                break
+            hits = response.json()["hits"]["hits"]
+            indexes.extend(hits)
+            if len(hits) < body["size"]:
+                break
+            body["search_after"] = hits[-1]["sort"]
+    except Exception:
+        logger.error("User [%s/%s] ID: %s - unable to retrieve metadata index",
                 user_count, len(users), user["id"])
         continue
 

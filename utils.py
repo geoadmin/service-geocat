@@ -87,6 +87,10 @@ def check_md_validity(geocat, uuid: str) -> bool:
             else:
                 logger.exception("metadata processed : %s - Reseting validation status failed", uuid)
 
+    if not validity:
+        logger.warning("metadata processed : %s - No validity data returned (skipping)", uuid)
+        return None
+
     if validity[0]["_source"]["valid"] == "0":
         return False
     else:
