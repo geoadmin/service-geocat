@@ -6,8 +6,33 @@ import re
 import requests
 import config
 import logging
+from smtplib import SMTP
+import ssl
+import os
 
 logger = logging.getLogger(__name__)
+
+def _wait_for_connectivity(check_host: str = "8.8.8.8", interval: int = 30) -> None:
+    """Block until internet connectivity is restored, checking every `interval` seconds."""
+    import socket
+    first = True
+    attempts = 0
+    while True:
+        try:
+            socket.setdefaulttimeout(5)
+            socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((check_host, 53))
+            if not first:
+                logger.info("Internet connectivity restored, resuming...")
+            return
+        except OSError:
+            attempts += 1
+            if first:
+                logger.warning("Internet connectivity lost. Waiting for connection to be restored (checking every %ss)...", interval)
+                first = False
+            else:
+                logger.warning("Still waiting for internet connectivity... attempt=%s (every %ss)", attempts, interval)
+            time.sleep(interval)
+
 
 def __url_checker(url: str, allow_redirects: bool = True) -> bool:
     """Check if URL is valid"""
@@ -17,8 +42,10 @@ def __url_checker(url: str, allow_redirects: bool = True) -> bool:
         return False
 
     if ' ' in url:
-        logger.error("Invalid URL: URL contains spaces: %s", url)
-        return False
+        from urllib.parse import quote
+        encoded_url = quote(url, safe=':/?#[]@!$&\'()*+,;=%')
+        logger.warning("URL contains spaces, testing encoded version: %s -> %s", url, encoded_url)
+        return __url_checker(encoded_url, allow_redirects)
 
     if url.startswith('local://'):
         logger.info(f"Ignoring local URL: {url}")
@@ -52,7 +79,7 @@ def __url_checker(url: str, allow_redirects: bool = True) -> bool:
 
     for i in range(RETRY):
         try:
-            with requests.get(url=url, allow_redirects=allow_redirects, timeout=30, headers=headers, stream=True) as response:
+            with requests.get(url=url, allow_redirects=allow_redirects, timeout=30, headers=headers, stream=True, verify=False) as response:
                 response.raise_for_status()
 
         except requests.exceptions.HTTPError as exc:
@@ -68,6 +95,7 @@ def __url_checker(url: str, allow_redirects: bool = True) -> bool:
                 return False
 
         except requests.exceptions.ConnectionError as exc:
+            _wait_for_connectivity()
             logger.warning("Checking URL (try %s): %s - %s", i + 1, url, repr(exc))
             time.sleep(i ** 2 + 1)
             continue
@@ -105,7 +133,7 @@ def check_metadata_url(index: dict, valid_url: list) -> dict:
                                 result["errors"].append(
                                     {
                                         "url": website,
-                                        "location": f"Website of {contact} in language {lang}"
+                                        "location": f"Website of {contact} in language {lang} (reusable contact from the geocat.ch directory - please fix it there, not in the metadata)"
                                     }
                                 )
                             else:
@@ -184,8 +212,12 @@ def get_message(report: list, receiver: str, user_name: str) -> object:
         body_html += f"Dataset: <a href='{config.URL_METADATA}{metadata['uuid']}'>{metadata['title']}</a><br><br>"
 
         for error in metadata["errors"]:
-            body_text += f"Invalid URL: {error['url']}\nLocation: {error['location']}\n\n"
-            body_html += f"Invalid URL: <a href='{error['url']}'>{error['url']}</a><br>Location: {error['location']}<br><br>"
+            if "url" in error:
+                body_text += f"Invalid URL: {error['url']}\nLocation: {error['location']}\n\n"
+                body_html += f"Invalid URL: <a href='{error['url']}'>{error['url']}</a><br>Location: {error['location']}<br><br>"
+            else:
+                body_text += f"Error: {error.get('error', 'Unknown error')}\nLocation: {error.get('location', 'Unknown location')}\n\n"
+                body_html += f"Error: {error.get('error', 'Unknown error')}<br>Location: {error.get('location', 'Unknown location')}<br><br>"
 
         body_text += "-----\n\n"
         body_html += "-----<br><br>"
@@ -196,3 +228,39 @@ def get_message(report: list, receiver: str, user_name: str) -> object:
     message.attach(MIMEText(body_html, "html"))
 
     return message
+
+def send_email(receivers: list, message: object) -> None:
+    """Send an email to the list of receivers using the backend defined in config.MAIL_BACKEND"""
+
+    if config.MAIL_BACKEND == "outlook":
+        import win32com.client
+        # Extract HTML body from MIMEMultipart object
+        html_body = ""
+        for part in message.walk():
+            if part.get_content_type() == "text/html":
+                html_body = part.get_payload(decode=True).decode("utf-8")
+                break
+        outlook = win32com.client.Dispatch("Outlook.Application")
+        for receiver in receivers:
+            mail = outlook.CreateItem(0)
+            mail.To = receiver
+            mail.Subject = message["Subject"]
+            mail.HTMLBody = html_body
+            mail.SentOnBehalfOfName = config.MAIL_SENDER
+            mail.Send()
+
+    elif config.MAIL_BACKEND == "smtp":
+        smtp_host = os.environ.get("SMTP_ENDPOINT")
+        smtp_port = int(os.environ.get("SMTP_PORT", 25))
+        smtp_password = os.environ.get("SMTP_PASSWORD")
+        if smtp_password:
+            with SMTP("smtp.office365.com", 587) as server:
+                server.starttls(context=ssl.create_default_context())
+                server.login(config.MAIL_SENDER, smtp_password)
+                server.sendmail(config.MAIL_SENDER, receivers, message.as_string())
+        else:
+            with SMTP(smtp_host, smtp_port) as server:
+                server.sendmail(config.MAIL_SENDER, receivers, message.as_string())
+
+    else:
+        raise ValueError(f"Unknown MAIL_BACKEND: {config.MAIL_BACKEND}. Use 'outlook' or 'smtp'")

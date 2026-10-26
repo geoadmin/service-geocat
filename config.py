@@ -21,11 +21,15 @@ SEARCH_API_BODY = {
         ]
     },
     "track_total_hits": True,
-    "sort": {"_id": "asc"},
+    "sort": {"uuid": "asc"},
     "size": 3000
 }
 
 MAIL_SENDER = "geocat@swisstopo.ch"
+
+# Mail backend: "outlook" (uses local Outlook COM, no password needed)
+#              "smtp"    (uses SMTP server defined in .env)
+MAIL_BACKEND = "outlook"
 
 MAIL_SUBJECT = "geocat.ch - Invalid URL in your metadata"
 
