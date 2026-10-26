@@ -12,6 +12,28 @@ import os
 
 logger = logging.getLogger(__name__)
 
+def _wait_for_connectivity(check_host: str = "8.8.8.8", interval: int = 30) -> None:
+    """Block until internet connectivity is restored, checking every `interval` seconds."""
+    import socket
+    first = True
+    attempts = 0
+    while True:
+        try:
+            socket.setdefaulttimeout(5)
+            socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect((check_host, 53))
+            if not first:
+                logger.info("Internet connectivity restored, resuming...")
+            return
+        except OSError:
+            attempts += 1
+            if first:
+                logger.warning("Internet connectivity lost. Waiting for connection to be restored (checking every %ss)...", interval)
+                first = False
+            else:
+                logger.warning("Still waiting for internet connectivity... attempt=%s (every %ss)", attempts, interval)
+            time.sleep(interval)
+
+
 def __url_checker(url: str, allow_redirects: bool = True) -> bool:
     """Check if URL is valid"""
     
@@ -73,6 +95,7 @@ def __url_checker(url: str, allow_redirects: bool = True) -> bool:
                 return False
 
         except requests.exceptions.ConnectionError as exc:
+            _wait_for_connectivity()
             logger.warning("Checking URL (try %s): %s - %s", i + 1, url, repr(exc))
             time.sleep(i ** 2 + 1)
             continue
@@ -110,7 +133,7 @@ def check_metadata_url(index: dict, valid_url: list) -> dict:
                                 result["errors"].append(
                                     {
                                         "url": website,
-                                        "location": f"Website of {contact} in language {lang}"
+                                        "location": f"Website of {contact} in language {lang} (reusable contact from the geocat.ch directory - please fix it there, not in the metadata)"
                                     }
                                 )
                             else:
@@ -189,8 +212,12 @@ def get_message(report: list, receiver: str, user_name: str) -> object:
         body_html += f"Dataset: <a href='{config.URL_METADATA}{metadata['uuid']}'>{metadata['title']}</a><br><br>"
 
         for error in metadata["errors"]:
-            body_text += f"Invalid URL: {error['url']}\nLocation: {error['location']}\n\n"
-            body_html += f"Invalid URL: <a href='{error['url']}'>{error['url']}</a><br>Location: {error['location']}<br><br>"
+            if "url" in error:
+                body_text += f"Invalid URL: {error['url']}\nLocation: {error['location']}\n\n"
+                body_html += f"Invalid URL: <a href='{error['url']}'>{error['url']}</a><br>Location: {error['location']}<br><br>"
+            else:
+                body_text += f"Error: {error.get('error', 'Unknown error')}\nLocation: {error.get('location', 'Unknown location')}\n\n"
+                body_html += f"Error: {error.get('error', 'Unknown error')}<br>Location: {error.get('location', 'Unknown location')}<br><br>"
 
         body_text += "-----\n\n"
         body_html += "-----<br><br>"
