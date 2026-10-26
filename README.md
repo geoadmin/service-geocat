@@ -13,7 +13,7 @@ If metadata are found to be invalid, an email is sent to the metadata owner with
 
 ## Installation
 Clone the repo and install dependencies in a python virtual environment (recommended)
-```
+```bash
 git clone https://github.com/geoadmin/service-geocat-validity-checker
 
 cd service-geocat-validity-checker
@@ -24,8 +24,33 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### at swisstopo (using powershell)
+# Harvester Selection
+Default behavior is controlled by `HARVESTER_ONLY` in `config.py`.
+
+Overrides (priority highest -> lowest):
+
+* CLI flags: `--harvester-only` or `--all-partners` (pass to `python main.py`).
+* Environment variable: set `HARVESTER_ONLY=true` or `HARVESTER_ONLY=false`.
+* `config.py` value: `HARVESTER_ONLY = True|False`.
+
+Examples:
+
+```bash
+# Target all partners (env var)
+export HARVESTER_ONLY=false
+python main.py
+
+# Windows PowerShell
+$env:HARVESTER_ONLY = 'false'
+python main.py
+
+# Using CLI (highest priority)
+python main.py --all-partners
+python main.py --harvester-only
 ```
+
+### at swisstopo (using powershell)
+```bash
 git clone https://github.com/geoadmin/service-geocat-validity-checker
 
 cd service-geocat-validity-checker

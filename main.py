@@ -1,9 +1,10 @@
 import os
 import sys
 import copy
-from smtplib import SMTP
+import json
 from dotenv import load_dotenv
 import config
+import argparse
 import geopycat
 import logging
 import logging.config
@@ -23,36 +24,101 @@ import utils
 
 load_dotenv()
 
+# Disable SSL certificate verification globally (corporate proxy / self-signed cert)
+import urllib3
+import requests as _requests
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+_original_request = _requests.Session.request
+def _request_no_verify(self, method, url, **kwargs):
+    kwargs.setdefault("verify", False)
+    return _original_request(self, method, url, **kwargs)
+_requests.Session.request = _request_no_verify
+
+# HARVESTER_ONLY override order: CLI -> env var -> config
+# CLI flags: --harvester-only (only harvesters), --all-partners (include local)
+harvester_only_flag = config.HARVESTER_ONLY
+env_val = os.environ.get("HARVESTER_ONLY")
+if env_val is not None:
+    if env_val.lower() in ("1", "true", "yes", "y"):
+        harvester_only_flag = True
+    elif env_val.lower() in ("0", "false", "no", "n"):
+        harvester_only_flag = False
+
+parser = argparse.ArgumentParser(add_help=False)
+group = parser.add_mutually_exclusive_group()
+group.add_argument("--harvester-only", dest="harvester_only", action="store_true", help="Target only harvesters")
+group.add_argument("--all-partners", dest="harvester_only", action="store_false", help="Target all partners (local + harvested)")
+parser.set_defaults(harvester_only=None)
+parser.add_argument("--start-from", dest="start_from", type=int, default=1,
+                    help="Start processing from this user index (1-based, as shown in logs)")
+args, _ = parser.parse_known_args()
+if args.harvester_only is not None:
+    harvester_only_flag = args.harvester_only
+start_from_index = args.start_from
+
 logger = logging.getLogger(__name__)
 
 geocat = geopycat.geocat(env="prod")
 
+# Determine whether to request only harvesters or all users
+harvester_only_flag = getattr(config, "HARVESTER_ONLY", True)
+
 try:
-    users = geocat.get_users(harvester_only=True)
-except:
-    logger.error("Cannot retrieve users information")
-    sys.exit()
+    try:
+        users = geocat.get_users(harvester_only=harvester_only_flag)
+    except Exception:
+        logger.warning("Failed to retrieve users — waiting for connectivity and retrying...")
+        import utils as _utils
+        _utils._wait_for_connectivity()
+        users = geocat.get_users(harvester_only=harvester_only_flag)
+except Exception:
+    logger.exception("Cannot retrieve users information")
+    sys.exit(1)
 
 user_count = 0
+
+# If HARVESTER_ONLY is False, we target all partners and should use the
+# alternate mail body texts.
+all_partners = not harvester_only_flag
 
 for user in users:
 
     user_count += 1
 
+    if user_count < start_from_index:
+        continue
+
     logger.info("Processing User [%s/%s] ID: %s (%s %s)",
                 user_count, len(users), user["id"], user["name"], 
                 user["surname"])
 
-    query = geopycat.utils.get_search_query(published_only=True,
-                        q=f"owner:{user['id']}")
+    query = geopycat.utils.get_search_query(published_only=True, q=f"owner:{user['id']}")
 
     body = copy.deepcopy(config.SEARCH_API_BODY)
     body["query"] = query
+    body["size"] = 2000
 
+    _headers = {"accept": "application/json", "Content-Type": "application/json"}
     try:
-        indexes = geocat.es_deep_search(body=body)
-    except:
-        logger.error("User [%s/%s] ID: %s - unable to retreieve metadata index",
+        indexes = []
+        while True:
+            response = geocat.session.post(
+                url=f"{geocat.env}/geonetwork/srv/api/search/records/_search",
+                headers=_headers,
+                data=json.dumps(body),
+                verify=False
+            )
+            if response.status_code != 200:
+                logger.error("User [%s/%s] ID: %s - search returned HTTP %s",
+                        user_count, len(users), user["id"], response.status_code)
+                break
+            hits = response.json()["hits"]["hits"]
+            indexes.extend(hits)
+            if len(hits) < body["size"]:
+                break
+            body["search_after"] = hits[-1]["sort"]
+    except Exception:
+        logger.error("User [%s/%s] ID: %s - unable to retrieve metadata index",
                 user_count, len(users), user["id"])
         continue
 
@@ -97,13 +163,13 @@ for user in users:
     if len(invalid_metadata) > 0:
         message = utils.get_message(invalid_metadata=invalid_metadata,
                             receiver=receivers[0],
-                            user_name=user['username'])
+                            user_name=user['username'],
+                            all_partners=all_partners)
 
         host = os.environ.get("SMTP_ENDPOINT")
 
         try:
-            with SMTP(host) as server:
-                server.sendmail(config.MAIL_SENDER, receivers, message.as_string())
+            utils.send_email(receivers=receivers, message=message)
 
         except Exception as e:
             logger.exception(e)
