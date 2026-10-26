@@ -1,0 +1,49 @@
+site_name: geocat harvesting service
+site_description: Harvesting service for geocat.ch
+site_author: geocat team
+nav:
+  - "🇬🇧 English":
+      - Home: index.md
+      - Getting Started: getting-started.md
+      - Automation: automation.md
+      - Parameters: parameters.md
+  - "🇫🇷 Français":
+      - Accueil: fr/index.md
+      - Prise en main: fr/getting-started.md
+      - Automatisation: fr/automation.md
+      - Paramètres: fr/parameters.md
+  - "🇩🇪 Deutsch":
+      - Startseite: de/index.md
+      - Erste Schritte: de/getting-started.md
+      - Automatisierung: de/automation.md
+      - Parameter: de/parameters.md
+
+theme:
+  name: material
+  logo: assets/images/geocat.png
+  features:
+    - navigation.tabs
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+
+extra_css:
+  - assets/stylesheets/extra.css
+  - https://unpkg.com/termynal@0.0.1/css/termynal.css
+
+repo_url: https://github.com/geoadmin/service-geocat-harvesting
+repo_name: service-geocat-harvesting
+
+markdown_extensions:
+  - pymdownx.superfences
